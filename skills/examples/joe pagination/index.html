@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>lorem</title>
+</head>
+<body>
+
+<div class="container1">
+<nav>
+  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32877/logo-thing.png" alt="">
+
+  <ul class="nav-links">
+    <li class="nav-link"><a href="#section1">section1</a></li>
+    <li class="nav-link"><a href="#section2">section2</a></li>
+    <li class="nav-link"><a href="#section3">section3</a></li>
+    <li class="nav-link"><a href="#section4">section4</a></li>
+    <li class="nav-link"><a href="#section5">section5</a></li>
+  </ul>
+</nav>
+
+<div class="section section1" id="section1">
+  <a href="#section4" class="btn">section4</a>
+</div>
+<div class="section section2" id="section2">
+  <a href="#section5" class="btn">section5</a>
+</div>
+<div class="section section3" id="section3">
+  <a href="#section1" class="btn">section1</a>
+</div>
+<div class="section section4" id="section4">
+  <a href="#section2" class="btn">section2</a>
+</div>
+<div class="section section5" id="section5">
+  <a href="#section1" class="btn">section1</a>
+</div>
+
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+  &lt;div class="container1">
+  &lt;nav>
+    &lt;img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/32877/logo-thing.png" alt="">
+  
+    &lt;ul class="nav-links">
+      &lt;li class="nav-link">&lt;a href="#section1">section1&lt;/a>&lt;/li>
+      &lt;li class="nav-link">&lt;a href="#section2">section2&lt;/a>&lt;/li>
+      &lt;li class="nav-link">&lt;a href="#section3">section3&lt;/a>&lt;/li>
+      &lt;li class="nav-link">&lt;a href="#section4">section4&lt;/a>&lt;/li>
+      &lt;li class="nav-link">&lt;a href="#section5">section5&lt;/a>&lt;/li>
+    &lt;/ul>
+  &lt;/nav>
+  
+  &lt;div class="section section1" id="section1">
+    &lt;a href="#section4" class="btn">section4&lt;/a>
+  &lt;/div>
+  &lt;div class="section section2" id="section2">
+    &lt;a href="#section5" class="btn">section5&lt;/a>
+  &lt;/div>
+  &lt;div class="section section3" id="section3">
+    &lt;a href="#section1" class="btn">section1&lt;/a>
+  &lt;/div>
+  &lt;div class="section section4" id="section4">
+    &lt;a href="#section2" class="btn">section2&lt;/a>
+  &lt;/div>
+  &lt;div class="section section5" id="section5">
+    &lt;a href="#section1" class="btn">section1&lt;/a>
+  &lt;/div>
+  
+  &lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  nav{
+    height: 5rem;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgb(26, 87, 156) 100%);
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 3px 5px 7px rgba(0, 0, 0,0.3);
+  }
+  nav img{
+    width: 200px;
+    padding-left: 2rem;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  .nav-links{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-content: center;
+  }
+  .nav-link{
+    align-items: center;
+  }
+  
+  .nav-link a{
+    align-items: center;
+    display: block;
+    height: 5rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: all 0.5s linear;
+    position: relative;
+  }
+  
+  .nav-link a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+  background: linear-gradient(90deg, rgba(252,176,69,1) 6%, rgba(253,29,29,1) 50%, rgba(131,58,180,1) 94%);
+    transition: all 0.5s ease-in-out; 
+  }
+  
+  
+  .nav-link a:hover::after{
+  width: 100%;
+  }
+  
+  .section{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+  .section::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,0.5);
+    z-index: 2
+  }
+  
+  .section:nth-of-type(1){
+    height: calc(100vh - 5rem);
+  }
+  
+  .section1{background: url('https://images.pexels.com/photos/4597994/pexels-photo-4597994.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')center/cover no-repeat;}
+  .section2{background: url('https://images.pexels.com/photos/265129/pexels-photo-265129.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')center/cover no-repeat;}
+  .section3{background: url('https://images.pexels.com/photos/3401403/pexels-photo-3401403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')center/cover no-repeat;}
+  .section4{background: url('https://images.pexels.com/photos/4709285/pexels-photo-4709285.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')center/cover no-repeat;}
+  .section5{background: url('https://images.pexels.com/photos/4348395/pexels-photo-4348395.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')center/cover no-repeat;}
+  
+  .btn{
+    display: block;
+    padding: 1rem 2rem;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,30,0.6951155462184874) 56%, rgba(51,144,163,1) 100%);
+    font-size: 2rem;
+    text-transform: capitalize;
+    border-radius: 20px;
+    transform: translateY(300px);
+    color: #fff;
+    z-index: 30;
+    transition: all linear 0.5s;
+  }
+  
+  .btn::after{
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 0;
+    height: 5px;
+  background: linear-gradient(90deg, rgba(252,176,69,1) 6%, rgba(253,29,29,1) 50%, rgba(131,58,180,1) 94%);
+    transition: all 0.5s ease-in-out; 
+  }
+  .btn::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 0;
+    height: 5px;
+  background: linear-gradient(90deg, rgba(252,176,69,1) 6%, rgba(253,29,29,1) 50%, rgba(131,58,180,1) 94%);
+    transition: all 0.5s ease-in-out; 
+  }
+  
+  .btn:hover{
+    opacity: 0.8;
+  }
+  .btn:hover::after{
+    width: 100%;
+  }
+  .btn:hover::before{
+    width: 100%;
+  }  
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+  // variables
+  const navLinks = document.querySelectorAll(".nav-link");
+  
+  const navContainer = document.querySelector(".nav-links");
+  
+  const btns = document.querySelectorAll(".btn");
+  
+  const moveToSection = function(e){
+      e.preventDefault();
+      const CurrentBtn = e.target;
+      const sectionName = CurrentBtn.getAttribute("href").slice(1);
+      const goToSection = document.querySelector(`.${sectionName}`).getBoundingClientRect();
+      <img src="https://s1.o7planning.com/en/12397/images/41666223.png" alt="" class="img-explain">
+  
+      console.log(window.pageXOffset,
+          window.pageYOffset)
+         
+          <img src="https://academy.hsoub.com/uploads/monthly_2021_01/001documentElementClientHeightWidth.png.f620528c1fa475d49043adc8c0b35799.png" alt="" class="img-explain">
+          <img src="https://i.stack.imgur.com/RFxSh.png" alt="" class="img-explain">
+          <img src="https://javascript.info/article/size-and-scroll/metric-all.svg" alt="" class="img-explain">
+         
+          console.log(document.documentElement.clientHeight,document.documentElement.clientWidth);
+          <img src="https://images.ctfassets.net/f20lfrunubsq/4NBY2S6nAuUO5JoccinT96/16f63ca6c9bd316e71719a0724f12a6f/Screenshot_2020-08-09_at_14.33.29.png" alt="" class="img-explain">
+          // scrolling
+          //  window.scrollTo({
+          //      left : goToSection.left + window.pageXOffset,
+          //      top : goToSection.top + window.pageYOffset,
+          //      behavior : 'smooth'
+          //  })
+          if(sectionName === 'section1'){
+                    // scrolling
+           window.scrollTo({
+               left : goToSection.left + window.pageXOffset,
+               top : goToSection.top + window.pageYOffset + '5rem',
+               behavior : 'smooth'
+           })  
+          }else{
+              document.querySelector(`.${sectionName}`).scrollIntoView({behavior : 'smooth'})
+          }
+    }
+  
+  
+  btns.forEach((btn) =>
+  btn.addEventListener("click", moveToSection))
+  
+  navContainer.addEventListener('click',moveToSection)
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>

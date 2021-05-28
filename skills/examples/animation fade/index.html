@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>lorem</title>
+</head>
+<body>
+
+<div class="container1">
+<div class="img-container">
+  <img src="https://images.pexels.com/photos/6373480/pexels-photo-6373480.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card" id="card">
+  <img src="https://images.pexels.com/photos/1762851/pexels-photo-1762851.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card">
+  <img src="https://images.pexels.com/photos/6373663/pexels-photo-6373663.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card">
+  <img src="https://images.pexels.com/photos/1274260/pexels-photo-1274260.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card">
+  <img src="https://images.pexels.com/photos/207666/pexels-photo-207666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card">
+  <img src="https://images.pexels.com/photos/164287/pexels-photo-164287.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card">
+</div>
+
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+  &lt;div class="container1">
+  &lt;div class="img-container">
+    &lt;img src="https://images.pexels.com/photos/6373480/pexels-photo-6373480.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card" id="card">
+    &lt;img src="https://images.pexels.com/photos/1762851/pexels-photo-1762851.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card">
+    &lt;img src="https://images.pexels.com/photos/6373663/pexels-photo-6373663.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card">
+    &lt;img src="https://images.pexels.com/photos/1274260/pexels-photo-1274260.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card">
+    &lt;img src="https://images.pexels.com/photos/207666/pexels-photo-207666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card">
+    &lt;img src="https://images.pexels.com/photos/164287/pexels-photo-164287.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="img-card">
+  &lt;/div>
+  
+  &lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  img{
+    display: block;
+  }
+  .container1{
+    width: 100vw;
+    height: 100vh;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,30,0.6951155462184874) 56%, rgba(51,144,163,1) 100%);
+  
+    display: grid;
+    place-items: center;
+  }
+  
+  .img-container{
+    display: flex;
+    height: 50vh;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .img-card{
+    width: 250px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+  } 
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+  // variables
+  const imgContainer = document.querySelector('.img-container')
+  
+  
+  
+  const fadePics = function(e){
+      const el = e.target
+      if(el.classList.contains('img-card')){
+        el.closest('.img-container').querySelectorAll('img').forEach(card => {
+          card.style.filter = 'none'
+            if(card !== el)
+            card.style.filter = `blur(${this}px)`
+            console.log(this);
+        });
+      }
+  
+  }
+  
+  
+  
+  imgContainer.addEventListener('mouseover', fadePics.bind(10))
+  imgContainer.addEventListener('mouseleave', fadePics.bind(0))
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>

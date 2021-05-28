@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>lorem</title>
+</head>
+<body>
+
+<div class="container1">
+
+<div class="main--container">
+  <div class="sub--container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</div>
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+  &lt;div class="container1">
+
+  &lt;div class="main--container">
+    &lt;div class="sub--container">
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+      &lt;div class="box">&lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    line-height: 2;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+  }
+  
+  .container1{
+    width: 100%;
+    height: 100vh;
+    background: rgb(230, 179, 179);
+    padding: 5rem;
+  }
+  
+  .main--container{
+    width: 80%;
+    height: 100%;
+    background: darkslategrey;
+    border: 5px solid red;
+    border-radius: 30px;
+    margin: 0 auto;
+    padding: 5rem;
+  }
+  
+  .sub--container{
+    width: 80%;
+    height: 100%;
+    background: dodgerblue;
+    border: 5px solid red;
+    border-radius: 40px;
+    margin: 0 auto;
+    padding: 5rem;
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-columns: 100px;
+    grid-auto-rows: 100px;
+    gap: 10px;
+  }
+  
+  .box{
+    background: firebrick;
+  }
+  
+   
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+<img src="https://uploads.sitepoint.com/wp-content/uploads/2017/05/1495534508eventflow.svg" alt="" class="img-explain">
+// variables
+const mainContainer = document.querySelector(".main--container");
+
+const subContainer = document.querySelector('.sub--container')
+
+const boxes = document.querySelectorAll('.box')
+
+
+const randomNumber = function(min,max){
+return Math.floor(Math.random() * (max - min + 1) + min)
+} 
+
+const randomBg = function(e){
+return `rgb(${randomNumber(0,255)},${randomNumber(0,255)},${randomNumber(0,255)})`
+}
+
+//to stop propagation 
+boxes.forEach(box=>{
+    box.addEventListener('click', function(e){
+        this.style.background = randomBg()
+        alert(`
+        e.target = ${e.target.classList}
+        e.currentTarget = ${e.currentTarget.classList}
+        this = ${this.classList}
+        `)
+       //e.stopPropagation()
+    })
+    
+})
+
+
+subContainer.addEventListener('click', function(e){
+    this.style.background = randomBg()
+    alert(`
+    e.target = ${e.target.classList}
+    e.currentTarget = ${e.currentTarget.classList}
+    this = ${this.classList}
+    `) 
+   
+})
+
+//if you want to disable Bubbling and use capture  use true  
+//el.addEventListener('click', listener, true)
+mainContainer.addEventListener('click', function(e){
+    this.style.background = randomBg()
+    alert(`
+    e.target = ${e.target.classList}
+    e.currentTarget = ${e.currentTarget.classList}
+    this = ${this.classList}
+    `) 
+},true)
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>

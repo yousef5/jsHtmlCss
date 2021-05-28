@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Noto+Sans+JP&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --mainColor:#F1DB4B;
+    --secColot:#34252F;
+    --mainWhite : #fff;
+    --mainBlack: #222;
+    --mainGrey : #afafaf;
+    --offwhite: #f4f4f4;
+    --red :#D90429;
+    --cream : #FFFECB;
+    --silverBink : #D5B0AC ;
+
+    --lightShadow : 2px 5px 2px rgba(0,0,0,0.4);
+    --darkShadow : 4px 10px 6px rgba(0,0,0,0.8);
+
+    --mainSpace:0.25rem;
+    --transition : all 0.5s linear;
+
+    --fontMain: 'Itim', cursive;
+    --fontSec : 'Noto Sans JP', sans-serif;
+  }
+
+body{
+    line-height: 2;
+    font-size: 1rem;
+    font-family: var(--fontMain);
+    
+}
+
+img:not(.logo){
+    display: block;
+    width: 100%;
+}
+
+a{
+text-decoration: none;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto  1fr;
+    transition: var(--transition);
+}
+
+/* sideBar */
+.sideBar{
+  background:var(--mainColor);  
+  box-shadow: var(--lightShadow);
+  overflow: auto;
+  transition: var(--transition);
+  width: 350px;
+  position: relative;
+  height: 100vh;
+  padding-bottom: 20rem;
+}
+
+.slideButton{
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+    font-size: 2rem;
+    z-index: 900;
+    color: var(--secColot);
+    height: 4rem;
+    border: none;
+    background-color: var(--silverBink);
+    padding: 0.1rem;
+    box-shadow: var(--lightShadow);
+    cursor: pointer;
+    transition: var(--transition);
+}
+.slideButton:hover{
+    background-color: var(--mainGrey);
+}
+
+.sideBar .sideBarHeader{
+    background: var(--cream);
+    min-height: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.logo{
+    width: 50px;
+    border-radius: 10px;
+}
+.sideBar a{
+    display: inline-block;
+}
+.sideBar .sideBarHeader h3{
+    text-transform: capitalize;
+}
+.linkContainer{
+    position: relative;
+}
+.linkContainer.show-links  .subContainer{
+    height: auto;
+}
+.linkContainer.show-links .arrowDown{
+    transform: rotate(180deg);
+}
+.master-link{
+    display: block;
+    padding: 0.2rem;
+    width: 100%;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    color: var(--secColot);
+    transition: var(--transition);
+    position: relative;
+    padding-left: 10px;
+
+}
+.master-link::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    background-color: var(--mainWhite);
+    opacity: 0.5;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arrowDown{
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    color: var(--secColot);
+    font-size: 1.5rem;
+}
+
+.master-link:hover{
+background-color: var(--secColot);
+color: var(--mainColor);
+padding-left: 20px;
+}
+
+
+.master-link:hover + .arrowDown{
+color: var(--mainColor);
+}
+.subContainer{
+    background-color: var(--silverBink);
+    transition: var(--transition);
+    height: 0;
+    overflow: hidden;
+}
+.sub-link{
+    display: block;
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: var(--secColot);
+    transition: var(--transition);  
+}
+.sub-link::before{
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f3B8";
+    margin-right: 0.5rem;
+}
+.sub-link:hover{
+    padding-left: 50px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: var(--mainWhite);
+    background-color: var(--secColot);
+}
+.sub-link.active{
+    padding-left: 50px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: var(--mainWhite);
+    background-color: var(--secColot);
+}
+
+
+/* masterFrame */
+.masterFrame{
+    height: 100vh;
+    transition: var(--transition);
+}
+
+.homeLogo{
+    position: fixed;
+    bottom: 2rem;
+    z-index: 500;
+    left: 23rem;
+    font-size: 2rem;
+    background: #34252F;
+    width: 5rem;
+    height: 5rem;
+    color: #fff;
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    transition: all 0.5s linear;
+}
+
+.homeLogo:hover{
+    opacity: 0.8;
+}
+
+.tooltips{
+    position: absolute;
+    background: transparent;
+    display: none;
+    padding: 1rem 0.25rem;
+    border-radius: 20px;
+    border: 1px solid var(--secColot);
+}
+
+.tooltips p{
+    background-color: var(--secColot);
+    color: wheat;
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}

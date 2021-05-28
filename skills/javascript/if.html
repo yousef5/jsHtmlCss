@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../style/fontawesome-free-5.9.0-web/css/all.css">
+  <link rel="stylesheet" href="../../style/prism.css">
+  <link rel="stylesheet" href="../../style/style.css">
+
+  <link rel="stylesheet" href="../../style/page.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="mainHead">
+    <h2>if Statement</h2>
+    <div class="mozila">
+      <a href="#" class="master-mdn" id="master-mdn">mdn <i class="fa fa-sort-down"></i></a>
+    </div>
+  </header>
+  <div class="mdn-side" id="mdn-side">
+    <button class="close-mdn-side" id="close-mdn-side"><i class="fas fa-times"></i></button>
+    <img src="https://blog.mozilla.org/opendesign/files/2017/06/logo.png" alt="">
+    <a href="#realExample" class="mdn-link">real example</a>
+    <a href="#validateInputData" class="mdn-link">Validate input data</a>
+    <a href="#checkTime" class="mdn-link">check Time</a>
+  </div>
+
+  <main>
+    <div class="text-content">
+      <h4 class="headOne">
+        Basic if ... else syntax
+      </h4>
+      <div class="img-gallery">
+        <img src="https://cdn.programiz.com/sites/tutorial2program/files/js-if-else-statement.png" alt="">
+      </div>
+      <div class="code">
+        <pre>
+<code class="language-js">
+let shoppingDone = false;
+let childsAllowance;
+
+if (shoppingDone === true) {
+  childsAllowance = 10;
+} else {
+  childsAllowance = 5;
+}
+</code>
+</pre>
+      </div>
+    </div>
+  </main>
+
+  <div class="overlay" id="overlay"></div>
+
+  <!-- all mdn examples -->
+  <!-- single mdn example -->
+  <div class="mdns">
+    <div class="single-mdn" id="realExample">
+      <header class="mainHead">
+        <h2>real Example</h2>
+      </header>
+      <div class="code2">
+        <pre>
+<code class="language-js">
+const select = document.querySelector('select');
+const para = document.querySelector('p');
+
+select.addEventListener('change', setWeather);
+
+function setWeather() {
+  const choice = select.value;
+
+  if (choice === 'sunny') {
+    para.textContent = 'It is nice and sunnyoutside today. Wear shorts! Go to thebeach, or the park, and get an ice cream.';
+  } else if (choice === 'rainy') {
+    para.textContent = 'Rain is fallingoutside; take a rain coat and an umbrella,and don\'t stay out for too long.';
+  } else if (choice === 'snowing') {
+    para.textContent = 'The snow is comingdown — it is freezing! Best to stay inwith a cup of hot chocolate, or go build asnowman.';
+  } else if (choice === 'overcast') {
+    para.textContent = 'It` isn\'t raining, butthe sky is grey and gloomy; it could turnany minute, so take a rain coat just incase.';
+  } else {
+    para.textContent = '';
+  }
+}
+</code>
+</pre>
+
+        <pre>
+<code class="language-html">
+  &lt;label for="weather">Select the weather type today: &lt;/label>
+  &lt;select id="weather">
+    &lt;option value="">--Make a choice--&lt;/option>
+    &lt;option value="sunny">Sunny&lt;/option>
+    &lt;option value="rainy">Rainy&lt;/option>
+    &lt;option value="snowing">Snowing&lt;/option>
+    &lt;option value="overcast">Overcast&lt;/option>
+ &lt;/select>
+&lt;p>&lt;/p>
+</code>
+</pre>
+
+      </div>
+    </div>
+    <!-- end of single mdn -->
+
+    <!-- single mdv -->
+    <div class="single-mdn" id="validateInputData">
+      <header class="mainHead">
+        <h2>validate Input Data</h2>
+      </header>
+      <div class="code2">
+        <pre>
+<code class="language-js">
+  var x, text;
+
+  // Get the value of the input field with id="numb"
+  x = document.getElementById("numb").value;
+  
+  // If x is Not a Number or less than 1 or greater than 10, output "input is not valid"
+  // If x is a number between 1 and 10, output "Input OK"
+  
+  if (isNaN(x) || x < 1 || x > 10) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+</code>
+</pre>
+      </div>
+      <!-- end of single code -->
+      <!-- single code -->
+      <div class="code2">
+        <pre>
+<code class="language-html">
+
+</code>
+</pre>
+      </div>
+      <!-- end of single code -->
+    </div>
+    <!-- end of single mdn -->
+
+    <!-- single mdv -->
+    <div class="single-mdn" id="validateInputData">
+      <header class="mainHead">
+        <h2>validate Input Data</h2>
+      </header>
+      <div class="code2">
+        <pre>
+<code class="language-js">
+  var x, text;
+
+  // Get the value of the input field with id="numb"
+  x = document.getElementById("numb").value;
+  
+  // If x is Not a Number or less than 1 or greater than 10, output "input is not valid"
+  // If x is a number between 1 and 10, output "Input OK"
+  
+  if (isNaN(x) || x < 1 || x > 10) {
+    text = "Input not valid";
+  } else {
+    text = "Input OK";
+  }
+</code>
+</pre>
+      </div>
+      <!-- end of single code -->
+      <!-- single code -->
+      <div class="code2">
+        <pre>
+<code class="language-html">
+
+</code>
+</pre>
+      </div>
+      <!-- end of single code -->
+    </div>
+    <!-- end of single mdn -->
+
+    <!-- single mdv -->
+    <div class="single-mdn" id="checkTime">
+      <header class="mainHead">
+        <h2>check time</h2>
+      </header>
+      <div class="code2">
+        <pre>
+<code class="language-js">
+  var time = new Date().getHours();
+  if (time < 10) {
+    greeting = "Good morning";
+  } else if (time < 20) {
+    greeting = "Good day";
+  } else {
+    greeting = "Good evening";
+  }
+</code>
+</pre>
+      </div>
+      <!-- end of single code -->
+      <!-- single code -->
+      <div class="code2">
+        <pre>
+<code class="language-html">
+
+</code>
+</pre>
+      </div>
+      <!-- end of single code -->
+    </div>
+    <!-- end of single mdn -->
+
+  </div>
+  <!-- end of all mdn -->
+  <script src="../../js/page.js"></script>
+  <script src="../../js/prism.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.bg{
+  /* dimensions */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  /* style */
+  background: url('https://images.pexels.com/photos/3405456/pexels-photo-3405456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')no-repeat center/cover;
+  z-index: -1;
+  filter: blur(0px);
+}
+
+
+
+.text{
+font-size: 4rem;
+font-weight: bold;
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>lorem</title>
+</head>
+<body>
+
+<div class="container1">
+<div class="slider">
+  <div class="slides">
+  <img src="img/1.jpg" alt="" class="slide">
+  <img src="img/2.jpg" alt="" class="slide">
+  <img src="img/3.jpg" alt="" class="slide">
+  <img src="img/4.jpg" alt="" class="slide">
+  <img src="img/5.jpg" alt="" class="slide">
+  <img src="img/6.jpg" alt="" class="slide">
+</div>
+
+<div class="dots-container">
+
+</div>
+
+<div class="button-group">
+  <button class="btn" id="prev">prev</button>
+  <button class="btn" id="next">next</button>
+</div>
+</div>
+
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+  &lt;div class="container1">
+  &lt;div class="slider">
+      &lt;div class="slides">
+          &lt;img src="img/1.jpg" alt="" class="slide">
+          &lt;img src="img/2.jpg" alt="" class="slide">
+          &lt;img src="img/3.jpg" alt="" class="slide">
+          &lt;img src="img/4.jpg" alt="" class="slide">
+          &lt;img src="img/5.jpg" alt="" class="slide">
+          &lt;img src="img/6.jpg" alt="" class="slide">
+      &lt;/div>
+
+      &lt;div class="dots-container">
+
+      &lt;/div>
+
+      &lt;div class="button-group">
+          &lt;button class="btn" id="prev">prev&lt;/button>
+          &lt;button class="btn" id="next">next&lt;/button>
+      &lt;/div>
+  &lt;/div>
+
+&lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    line-height: 2;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .slider{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+   transition: all 1s ease-in-out;
+  }
+  
+  .dots-container{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 50px;
+    gap: 10px;
+    top: 50%;
+    right: 20px;
+    z-index: 100;
+  }
+  
+  .dot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.5s linear;
+    transform: translateY(-50%);
+  }
+  
+  .dot:hover{
+    background: rgb(167, 166, 166);
+  }
+  
+  .dot.active-dot{
+    background: rgb(99, 99, 99);
+  }
+  
+  .button-group{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .btn{
+    border: none;
+    outline: none;
+    padding: 0.6rem 1.6rem;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.5s linear;
+  }
+  
+  .btn:nth-of-type(1){
+    background: rgb(43, 71, 46);
+    color: #fff;
+  }
+  
+  .btn:last-of-type{
+    background-color: coral;
+  }
+  
+  .btn:hover{
+    opacity: 0.9;
+  }
+  
+     
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+  // variables
+  const slides = document.querySelectorAll(".slide");
+  
+  const dotContainer = document.querySelector(".dots-container");
+  
+  const next = document.getElementById("next");
+  const prev = document.getElementById("prev");
+  
+  const slider = function () {
+    let curSlide = 0;
+    const maxLength = slides.length;
+  
+    const createDots = function () {
+      slides.forEach((_, i) => {
+        dotContainer.insertAdjacentHTML(
+          "beforeend",
+          `&lt;button class="dot" data-slide="${i}">&lt;/button>`
+        );
+      });
+    };
+  
+    const activeDot = function () {
+      const allDots = dotContainer.querySelectorAll(".dot");
+      allDots.forEach((d, i) => {
+        d.classList.remove("active-dot");
+        const dotSlide = d.getAttribute("data-slide");
+  
+        if (+dotSlide === curSlide) {
+          d.classList.add("active-dot");
+        }
+      });
+    };
+  
+    const goToSlide = function (slide) {
+      slides.forEach((s, i) => {
+        s.style.transform = `translateX(${100 * (i - slide)}%)`;
+      });
+    };
+  
+    const nextSlide = function () {
+      if (curSlide === maxLength - 1) {
+        curSlide = 0;
+      } else {
+        curSlide++;
+      }
+  
+      goToSlide(curSlide);
+      activeDot();
+    };
+    const prevSlide = function () {
+      if (curSlide === 0) {
+        curSlide = maxLength - 1;
+      } else {
+        curSlide--;
+      }
+  
+      goToSlide(curSlide);
+      activeDot();
+    };
+  
+    prev.addEventListener("click", prevSlide);
+    next.addEventListener("click", nextSlide);
+  
+    const goWithDot = function () {
+      const allDots = dotContainer.querySelectorAll(".dot");
+      allDots.forEach((e, i) => {
+        e.addEventListener("click", function (e) {
+          const el = e.target;
+          const dotSlide = +el.getAttribute("data-slide");
+          curSlide = dotSlide
+          goToSlide(curSlide);
+          activeDot();
+        });
+      });
+    };
+    const init = function () {
+      goToSlide(curSlide);
+      createDots();
+      activeDot();
+      goWithDot();
+    };
+    init();
+  };
+  slider();
+  
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>

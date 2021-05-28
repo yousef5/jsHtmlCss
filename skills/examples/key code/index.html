@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>lorem</title>
+</head>
+<body>
+
+<div class="container1">
+<div class="insert">
+  <div class="key">please input any input</div>
+</div>
+
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+
+  &lt;div class="container1">
+  &lt;div class="insert">
+    &lt;div class="key">please input any input&lt;/div>
+  &lt;/div>
+  
+  &lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    line-height: 2;
+    font-size: 1rem;
+  }
+  
+  .container1{
+    width: 100%;
+    height: 100vh;
+    background: #afafaf;
+    display: grid;
+    place-items: center;
+  }
+  
+  .insert{
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    margin: 1rem auto;
+  }
+  
+  .key{
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    flex: 0 0 calc(33.33% - 2rem);
+    text-align: center;
+    position: relative;
+  }
+  
+  small{
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+  }
+   
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+  // variables
+  const insert = document.querySelector(".insert");
+  
+  document.addEventListener("keydown", (event) => {
+    insert.innerHTML = `
+     &lt;div class="key">${event.key} &lt;small>😍 key&lt;/small>&lt;/div>
+  
+     &lt;div class="key">${event.keyCode}&lt;small>😍 keyCode&lt;/small>&lt;/div>
+   
+     &lt;div class="key">${event.code}<&lt;small>😍 code</&lt;small>&lt;/div>
+      `;
+  });
+  
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>

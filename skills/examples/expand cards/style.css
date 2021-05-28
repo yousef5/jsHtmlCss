@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: grid;
+   place-items: center;
+   height: 100vh;
+   overflow: hidden;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 95vw;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.panel{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+    flex: 1;
+    margin-left: 1rem;
+    transition: all 1s linear;
+    position: relative;
+    cursor: pointer;
+}
+
+.panel h3{
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: capitalize;
+    letter-spacing: 0.25rem;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+   
+}
+
+.panel.active{
+    flex: 10;
+}
+
+.panel.active h3{
+    opacity: 1;
+    transition-delay: 0.5s;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>lorem</title>
+</head>
+<body>
+
+<div class="container1">
+  <audio id="applause" src="sounds/applause.mp3"></audio>
+  <audio id="boo" src="sounds/boo.mp3"></audio>
+  <audio id="gasp" src="sounds/gasp.mp3"></audio>
+  <audio id="tada" src="sounds/tada.mp3"></audio>
+  <audio id="victory" src="sounds/victory.mp3"></audio>
+  <audio id="wrong" src="sounds/wrong.mp3"></audio>
+
+  <div class="buttons">
+  </div>
+
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+  &lt;div class="container1">
+  &lt;audio id="applause" src="sounds/applause.mp3">&lt;/audio>
+  &lt;audio id="boo" src="sounds/boo.mp3">&lt;/audio>
+  &lt;audio id="gasp" src="sounds/gasp.mp3">&lt;/audio>
+  &lt;audio id="tada" src="sounds/tada.mp3">&lt;/audio>
+  &lt;audio id="victory" src="sounds/victory.mp3">&lt;/audio>
+  &lt;audio id="wrong" src="sounds/wrong.mp3">&lt;/audio>
+
+  &lt;div class="buttons">
+  &lt;/div>
+
+&lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .container1{
+    background:cadetblue;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  
+  .buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .btn{
+    padding: 0.8rem 1.5rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+    flex: 0  0  calc(16.6% - 2rem);
+    border: none;
+    background: chocolate;
+    color: #fff;
+    box-shadow: 2px 5px 6px rgba(0,0,0,0.4);
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .btn:hover{
+    opacity: 0.8;
+  }  
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+  // variables
+  const sounds = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
+  sounds.forEach((sound) => {
+    // create btn for each sound in button div
+    const btn = document.createElement("button");
+    btn.innerHTML = sound;
+    btn.classList.add("btn");
+  
+    //play sound when click button
+    btn.addEventListener("click", () => {
+      stopSounds();
+      document.getElementById(sound).play();
+    });
+  
+    document.querySelector(".buttons").appendChild(btn);
+  });
+  
+  //stop sound
+  function stopSounds() {
+    sounds.forEach((sound) => {
+      document.getElementById(sound).pause();
+    });
+  }
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>

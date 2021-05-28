@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&family=Righteous&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    min-height: 100vh;
+    position: relative;
+    width: 100vw;
+    display: flex;
+}
+.bg{
+    flex: 0 0 50%;
+    background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('https://cdn.pixabay.com/photo/2018/05/10/17/48/lego-3388163_1280.png')center/cover ;
+}
+
+.other{
+    flex: 0 0 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url('https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_1280.png')center/cover ;
+}
+
+
+.text-info h1{
+    font-size: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    margin-bottom: 2rem;
+    font-family: 'Chela One', cursive;
+    /* font-family: 'Righteous', cursive; */
+    text-shadow: 2px 3px 1px #fff;
+
+
+    color: rgb(197, 68, 9);
+}
+
+.text-info h4{
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    letter-spacing: 0.25rem;
+    font-family: 'Righteous', cursive;
+    color: rgb(197, 68, 9);
+    margin-left: 2rem;
+    text-shadow: 2px 1px 1px #fff;
+}
+
+.road-map{
+display: flex;
+flex-wrap: wrap;
+padding: 0.5rem;
+
+}
+
+.road-map .btn{
+background: rgba(248, 197, 115, 0.25);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4.5px );
+-webkit-backdrop-filter: blur( 4.5px );
+border-radius: 10px;
+border: 1px solid rgba(71, 71, 71, 0.18);
+text-decoration: none;
+padding: 1rem 4rem;
+font-size: 2rem;
+color: #fff;
+text-transform: capitalize;
+transition: all 0.5s linear;
+flex: 0  0 calc(33.3% - 1rem);
+text-align: center;
+margin-left: 1rem;
+margin-bottom: 1rem;
+}
+.road-map .btn:hover{
+    background: rgba( 88, 53, 0, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4.5px );
+-webkit-backdrop-filter: blur( 4.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../../style/page.css">
+  <link rel="stylesheet" href="../../../style/prism3.css">
+  <title>lorem</title>
+</head>
+
+<body>
+
+  <div class="container1">
+    <div class="overlays">
+      <div class="inner-overlay">
+        <span id="close"><i class="fa fa-times"></i></span>
+        <img src="images/1.jpg">
+      </div>
+    </div>
+
+    <section class="gallery"></section>
+
+  </div>
+
+
+
+  <a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+  <!-- the code  -->
+  <div class="single-code" id="single-code">
+    <!-- ------------------------------------------------------------- -->
+    <!-- single code -->
+    <div class="coding code-html">
+      <pre>
+<code class="language-html">
+  &lt;div class="container1">
+  &lt;div class="overlays">
+    &lt;div class="inner-overlay">
+      &lt;span id="close">&lt;i class="fa fa-times">&lt;/i>&lt;/span>
+      &lt;img src="images/1.jpg">
+    &lt;/div>
+  &lt;/div>
+
+  &lt;section class="gallery">&lt;/section>
+
+&lt;/div>
+</code>
+</pre>
+    </div>
+    <!-- end of single code -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- single code -->
+    <div class="coding code-css">
+      <pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background: linear-gradient(
+      90deg,
+      rgba(252, 176, 69, 0.8463760504201681) 0%,
+      rgba(253, 115, 29, 0.8995973389355743) 50%,
+      rgba(180, 103, 58, 0.8267682072829132) 100%
+    );
+  }
+  
+  .container1 {
+    padding: 2rem;
+  }
+  .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 20px;
+    grid-auto-flow: dense;
+  }
+  
+  .item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .overlay-view {
+    background: rgba(0, 0, 0, 0.5);
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    justify-content: center;
+    align-items: flex-start;
+    transition: all 0.5s linear;
+    transform: translateY(100%);
+  }
+  
+  .overlay-view span {
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .item:hover .overlay-view {
+    transform: translateY(0);
+  }
+  .item.h2{
+    grid-row: span 2;
+  }
+  .item.h3{
+    grid-column: span 3;
+  }
+  .overlays {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.5s ease-in-out;
+    display: none;
+    z-index: 500;
+  }
+  
+  .inner-overlay {
+    width: 700px;
+    height: 700px;
+    background: #fff;
+    position: relative;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+  }
+  
+  .inner-overlay span {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #fff;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s linear;
+  }
+  
+  .inner-overlay span:hover {
+    transform: rotate(180deg);
+  }
+  
+  .overlays.showInner {
+    display: grid;
+    place-items: center;
+  }
+  
+  .overlays img{
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+  }  
+</code>
+</pre>
+    </div>
+    <!-- end of single code -->
+    <!-- ------------------------------------------------------------- -->
+    <div class="coding code-js">
+      <pre>
+<code class="language-js">
+  // variables
+  const gallery = document.querySelector(".gallery");
+  const overlay = document.querySelector(".overlays");
+  const close = document.getElementById('close')
+  
+  
+  //function to make random
+  function randomNumber(limit) {
+    return Math.floor(Math.random() * limit) + 1;
+  }
+  
+  
+  //function to show overlay with img 
+  function showOverlays(img) {
+    overlay.classList.add("showInner");
+    overlay.children[0].querySelector("img").src = img;
+  }
+  
+  
+  //function add item with html
+  const generateItem = function ([v, h]) {
+    return `<div class = "item h${h} v${v}">
+      <img src="images/${randomNumber(12)}.jpg">
+      <div class="overlay-view"><span ><i class="fa fa-search"></i></span></div>
+      </div>`;
+  };
+  
+  //make array to use it to loop 
+  const digits = Array.from({ length: 50 }, () => [
+    randomNumber(4),
+    randomNumber(4),
+  ]);
+  
+  const mainGallery = digits.map(generateItem).join(" ");
+  
+  gallery.innerHTML = mainGallery;
+  
+  const items = document.querySelectorAll(".item");
+  
+  items.forEach((item) => {
+    item.addEventListener("click", function (e) {
+      const el = e.currentTarget;
+      const srcImg = el.querySelector("img").src;
+      return showOverlays(srcImg)
+    });
+  });
+  
+  close.addEventListener('click',function(e){
+      overlay.classList.remove('showInner')
+  })
+  </code>
+  </pre>
+    </div>
+    <!-- end of single code -->
+    <!-- ------------------------------------------------------------- -->
+  </div>
+
+
+  <script src="../../../js/prism3.js"></script>
+  <script src="../../../js/code.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>

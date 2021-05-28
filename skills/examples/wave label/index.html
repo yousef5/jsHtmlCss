@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../../style/page.css">
+  <link rel="stylesheet" href="../../../style/prism3.css">
+  <title>lorem</title>
+</head>
+
+<body>
+
+  <div class="container1">
+    <form action="" class="form">
+      <h2>please login </h2>
+      <div class="form-control">
+        <input type="email" required>
+        <label for="">Email</label>
+      </div>
+
+      <div class="form-control">
+        <input type="password" name="" id="" required>
+        <label for="">password</label>
+      </div>
+
+      <button class="btn" type="submit">login</button>
+      <p class="text">don't have an account?<span class="color"><a href="#">register</a></span></p>
+    </form>
+
+  </div>
+
+
+
+  <a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+  <!-- the code  -->
+  <div class="single-code" id="single-code">
+    <!-- ------------------------------------------------------------- -->
+    <!-- single code -->
+    <div class="coding code-html">
+      <pre>
+<code class="language-html">
+  &lt;div class="container1">
+  &lt;form action="" class="form">
+    &lt;h2>please login &lt;/h2>
+    &lt;div class="form-control">
+      &lt;input type="email" required>
+      &lt;label for="">Email&lt;/label>
+    &lt;/div>
+
+    &lt;div class="form-control">
+      &lt;input type="password" name="" id="" required>
+      &lt;label for="">password&lt;/label>
+    &lt;/div>
+
+    &lt;button class="btn" type="submit">login&lt;/button>
+    &lt;p class="text">don't have an account?&lt;span class="color">&lt;a href="#">register&lt;/a>&lt;/span>&lt;/p>
+  &lt;/form>
+
+&lt;/div>
+</code>
+</pre>
+    </div>
+    <!-- end of single code -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- single code -->
+    <div class="coding code-css">
+      <pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    line-height: 1.5;
+  }
+  
+  .container1 {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: steelblue;
+  
+    overflow: hidden;
+  }
+  
+  .form {
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+  }
+  
+  .container1 h2 {
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  .form-control {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .form-control input {
+    background: transparent;
+    border: 0;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 1rem;
+    outline: 0;
+    font-size: 1.5rem;
+  }
+  .form-control label {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.2rem;
+  }
+  
+  .btn{
+    border: 0;
+    background: skyblue;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    transition: all 0.5s linear;
+  }
+  
+  .btn:active{
+    transform: scale(0.9);
+  }
+  
+  .text{
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+  }
+  .text a{
+    color: aquamarine;
+    text-decoration: none;
+  }
+  label span{
+    display: inline-block;
+    transition: 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  input:focus,
+  input:valid{
+    border-color: slategray;
+  }
+  
+  
+  input:focus + label span{
+    transform: translateY(-25px);
+    color: slategray;
+  }
+</code>
+</pre>
+    </div>
+    <!-- end of single code -->
+    <!-- ------------------------------------------------------------- -->
+    <div class="coding code-js">
+      <pre>
+<code class="language-js">
+  // variables
+  const labels = document.querySelectorAll('label')
+  // change very letter in label with span that wil animate
+   labels.forEach((label)=>{
+      label.innerHTML = label.innerHTML.split("").
+   map((l,e)=>{
+           return `&lt;span style="transition-delay : ${e * 50}ms">${l}&lt;/span>`
+       }).join(" ")
+   })
+  
+  </code>
+  </pre>
+    </div>
+    <!-- end of single code -->
+    <!-- ------------------------------------------------------------- -->
+  </div>
+
+
+  <script src="../../../js/prism3.js"></script>
+  <script src="../../../js/code.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>

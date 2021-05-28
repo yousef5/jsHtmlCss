@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../../style/page.css">
+  <link rel="stylesheet" href="../../../style/prism3.css">
+  <title>lorem</title>
+</head>
+
+<body>
+
+  <div class="container1">
+    <!-- single social -->
+    <article class="social">
+      <span><i class="fab fa-youtube-square"></i></span>
+      <div class="count" data-target="5500">0</div>
+      <h3>youtube subscribes</h3>
+    </article>
+    <!-- end of single social -->
+
+    <!-- single social -->
+    <article class="social">
+      <span><i class="fab fa-facebook-square"></i></span>
+      <div class="count" data-target="900000">0</div>
+      <h3>facebook fans</h3>
+    </article>
+    <!-- end of single social -->
+    <!-- single social -->
+    <article class="social">
+      <span><i class="fab fa-twitter-square"></i></span>
+      <div class="count" data-target="7000">0</div>
+      <h3>twitter followers</h3>
+    </article>
+    <!-- end of single social -->
+
+  </div>
+
+
+
+  <a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+  <!-- the code  -->
+  <div class="single-code" id="single-code">
+    <!-- ------------------------------------------------------------- -->
+    <!-- single code -->
+    <div class="coding code-html">
+      <pre>
+<code class="language-html">
+  &lt;div class="container1">
+  &lt;!-- single social -->
+&lt;article class="social">
+&lt;span>&lt;i class="fab fa-youtube-square">&lt;/i>&lt;/span>
+&lt;div class="count" data-target="5500">0&lt;/div>
+&lt;h3>youtube subscribes&lt;/h3>
+&lt;/article>
+&lt;!-- end of single social -->
+
+  &lt;!-- single social -->
+&lt;article class="social">
+&lt;span>&lt;i class="fab fa-facebook-square">&lt;/i>&lt;/span>
+&lt;div class="count" data-target="900000">0&lt;/div>
+&lt;h3>facebook fans&lt;/h3>
+&lt;/article>
+&lt;!-- end of single social -->
+  &lt;!-- single social -->
+&lt;article class="social">
+&lt;span>&lt;i class="fab fa-twitter-square">&lt;/i>&lt;/span>
+&lt;div class="count" data-target="7000">0&lt;/div>
+&lt;h3>twitter followers&lt;/h3>
+&lt;/article>
+&lt;!-- end of single social -->
+
+&lt;/div>
+</code>
+</pre>
+    </div>
+    <!-- end of single code -->
+    <!-- ------------------------------------------------------------- -->
+    <!-- single code -->
+    <div class="coding code-css">
+      <pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .body{
+    font-size: 1rem;
+    line-height: 2;
+  }
+  
+  .container1{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3,1fr);
+    background-color:burlywood ;
+    align-items: center;
+  }
+  
+  .social{
+    background-color: brown;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 2px 5px 3px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: all 0.5s linear;
+  }
+  
+  .social:hover{
+    outline: 5px solid #fff;
+    outline-offset: 20px;
+  }
+  
+  .social h3{
+    color: #fff;
+    letter-spacing: 0.25rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .social span{
+    color: #fff;
+    font-size: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  .social div{
+    color: #fff;
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+   
+</code>
+</pre>
+    </div>
+    <!-- end of single code -->
+    <!-- ------------------------------------------------------------- -->
+    <div class="coding code-js">
+      <pre>
+<code class="language-js">
+  // variables
+  const counts = document.querySelectorAll(".count");
+  
+  counts.forEach((count) => {
+    // add fn to use it in settimeout
+    const updateCount = function () {
+      //  this target use dataset
+      const target = +count.dataset.target;
+      //   innerhtml as number
+      const c = +count.innerHTML;
+      //incerment rate
+      let incermet = target / 200;
+      //add condition to incerment
+      if (c < target) {
+        count.innerHTML = Math.ceil(c + incermet);
+        setTimeout(updateCount, 50);
+      } else {
+        count.innerHTML = target;
+      }
+    };
+    //   excute the fn
+    updateCount();
+  });
+  </code>
+  </pre>
+    </div>
+    <!-- end of single code -->
+    <!-- ------------------------------------------------------------- -->
+  </div>
+
+
+  <script src="../../../js/prism3.js"></script>
+  <script src="../../../js/code.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>

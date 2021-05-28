@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>lorem</title>
+</head>
+<body>
+
+<div class="container1">
+<section class="bg" id="bg"></section>
+<div class="text" id="text">0%</div>
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+  &lt;div class="container1">
+  &lt;section class="bg" id="bg">&lt;/section>
+  &lt;div class="text" id="text">0%&lt;/div>
+  &lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+  }
+  
+  .bg{
+    /* dimensions */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  
+    /* style */
+    background: url('https://images.pexels.com/photos/3405456/pexels-photo-3405456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')no-repeat center/cover;
+    z-index: -1;
+    filter: blur(0px);
+  }
+  
+  
+  
+  .text{
+  font-size: 4rem;
+  font-weight: bold;
+  }
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+  //👉 variables
+  const bg = document.getElementById("bg");
+  const txt = document.getElementById("text");
+  
+  //👉add load to 0 and make it global
+  let load = 0;
+  
+  // add blurry fn to interval
+  // when add it to interval it call it
+  // automatic
+  let int = setInterval(blurry, 30);
+  
+  //👉make fn to increase load and
+  //👉blur bg and hide text
+  function blurry() {
+    //👉make load increase
+    load++;
+    //👉add load to text with %
+    txt.innerHTML = `${load} %`;
+    //👉 add blur to bg using scale fn
+    bg.style.filter = `blur(${scale(load, 100, 50)}px)`;
+    //👉 add opacity to txt using scale fn
+    txt.style.opacity = scale(load,100, 1)
+    //👉add condition to stop interval
+    if (load > 99) {
+      clearInterval(int);
+    }
+  }
+  
+  //👉 fn to scale load in opacity desc
+  //👉and blur desc
+  //👉n =propMax - (load * propMAX)/ScaleMax
+  function scale(scaleNow, scaleMax, PropMax) {
+    return PropMax - (scaleNow * PropMax) / scaleMax;
+  }
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>

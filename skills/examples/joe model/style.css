@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.container1{
+  background: url('https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')center/cover no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+
+.modal{
+  background-color: #fff;
+  width: 35vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 1rem;
+  border-radius: 30px;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+
+.modal--show{
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal h2{
+  text-transform: capitalize;
+  font-size: 2.5rem;
+  line-height: 1.8;
+  padding-top: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+ 
+}
+.form{
+  padding: 2rem;
+  padding-top: 0;
+}
+.form-control{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5rem;
+}
+
+.form label{
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.form input{
+  border: 1px solid #222;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  outline: 0;
+  padding-left: 0.5rem;
+  text-transform: capitalize;
+}
+
+.second{
+  width: 80%;
+  margin: 3rem auto 0 auto;
+  display: block;
+   font-size: 2rem;
+   text-transform: capitalize;
+   border: 0;
+   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+   padding: 0.5rem;
+   border-radius: 10px;
+   color: #fff;
+   cursor: pointer;
+   transition: all 0.5s linear;
+}
+
+.second:hover{
+ width: 60%;
+}
+
+.first{
+  display: block;
+   font-size: 2rem;
+   text-transform: capitalize;
+   border: 0;
+   background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+   padding: 0.5rem 2rem;
+   border-radius: 10px;
+   color: #fff;
+   cursor: pointer;
+   transition: all 0.5s linear;
+   position: fixed;
+   top: 50px;
+   right: 50px;
+}
+
+.first:hover{
+  transform: scale(0.9);
+}
+
+.special{
+  position: relative;
+  color: #fff;
+}
+
+.special::after{
+  content: "";
+  position: absolute;
+ top: -10px;
+ left: -10px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%) ;
+  z-index: -1;
+  padding: 0.5rem;
+  transform: skew(-15deg);
+}
+
+.close{
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+.close:hover{
+  transform: rotate(180deg);
+}
+
+.overlay2{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.6);
+  z-index:2;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+
+.overlay--show{
+  visibility: visible;
+  opacity: 1;
+}
