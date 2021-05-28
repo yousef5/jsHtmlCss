@@ -67,10 +67,20 @@ const slider = function () {
       e.addEventListener("click", function (e) {
         const el = e.target;
         const dotSlide = +el.getAttribute("data-slide");
-        curSlide = dotSlide
+        curSlide = dotSlide;
         goToSlide(curSlide);
         activeDot();
       });
+    });
+  };
+
+  const keySlider = function () {
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") {
+        return nextSlide();
+      } else if (e.key === "ArrowLeft") {
+        return prevSlide();
+      }
     });
   };
   const init = function () {
@@ -78,6 +88,7 @@ const slider = function () {
     createDots();
     activeDot();
     goWithDot();
+    keySlider();
   };
   init();
 };
