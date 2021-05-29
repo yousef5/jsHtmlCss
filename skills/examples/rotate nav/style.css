@@ -4,3 +4,97 @@
   box-sizing: border-box;
 }
 
+body{
+  background: #333;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 2;
+}
+
+.template{
+  background: #fff;
+  padding: 8rem;
+  position: relative;
+  transform-origin: top left;
+  transition: all 0.5s linear;
+}
+
+.showNav{
+transform: rotate(-20deg);
+}
+.template h2
+{
+  text-transform: capitalize;
+  margin-bottom: -15px;
+}
+.template small{
+  display: inline-block;
+  margin-top: 0;
+  text-transform: capitalize;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.template p{
+  text-align: justify;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.template h3{
+  margin-bottom: 1.25rem;
+}
+
+img{
+  display: block;
+  width: 100%;
+}
+
+.button-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(233, 103, 103);
+  border-radius: 50%;
+ transform: translate(-50%,-50%);
+}
+.circle{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transition: all 0.5s linear;
+}
+.btn{
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: transparent;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  font-size: 2rem;
+  transform-origin: top left;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.btn.bar{
+  left: 65%;
+}
+.btn.close{
+  top: 60%;
+  left: 35%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+ .template.showNav  .circle{
+transform: rotate(-90deg);
+}
+
+nav{
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+}
