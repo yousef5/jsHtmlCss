@@ -210,7 +210,7 @@
 .showCode {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  right: 0.2rem;
   font-size: 2rem;
   background: #d90429;
   color: #fff;
@@ -221,6 +221,7 @@
   border-radius: 1rem;
   transition: all 0.5s linear;
   z-index: 1000;
+  transform: translateX(4rem);
 }
 .single-code {
   position: fixed;
@@ -242,7 +243,7 @@
   visibility: visible;
 }
 .showCode:hover {
-  opacity: 0.58;
+  transform: translateX(0);
 }
 
 .code-html {

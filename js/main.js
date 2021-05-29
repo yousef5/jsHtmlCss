@@ -3,7 +3,15 @@ const masterLink = document.querySelectorAll(".master-link");
 const frame = document.querySelector(".masterFrame");
 
 const subLinks = document.querySelectorAll(".sub-link");
+const showSideBtn = document.getElementById('showSide')
 const tools = document.getElementById('tool')
+
+const sideBar = document.getElementById('sideBar')
+
+// show side
+showSideBtn.addEventListener('click',function(){
+  sideBar.classList.toggle('hideWidth')
+})
 // show sub menu in main side bar
 masterLink.forEach((link) => {
   link.addEventListener("click", (e) => {

@@ -51,14 +51,38 @@ text-decoration: none;
 .sideBar{
   background:var(--mainColor);  
   box-shadow: var(--lightShadow);
-  overflow: auto;
   transition: var(--transition);
   width: 350px;
+  overflow-y: auto;
   position: relative;
   height: 100vh;
   padding-bottom: 20rem;
 }
+.hideWidth{
+    width: 0;
+    opacity: 0;
+}
 
+.showSide{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 100;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: #D5B0AC;
+    font-size: 2rem;
+    padding: 3rem 1rem;
+    transition: all 0.5s linear;
+    transform: translateY(-8rem);
+    border-radius: 20px;
+    box-shadow: 3px 5px 2px rgba(0,0,0,0.2);
+}
+
+.showSide:hover{
+    transform: translateY(-2rem);
+}
 .slideButton{
     position: absolute;
     right: 0rem;
@@ -84,16 +108,22 @@ text-decoration: none;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    white-space: nowrap;
 }
+
+
 .logo{
     width: 50px;
     border-radius: 10px;
 }
+
+
 .sideBar a{
     display: inline-block;
 }
 .sideBar .sideBarHeader h3{
     text-transform: capitalize;
+    white-space: nowrap;
 }
 .linkContainer{
     position: relative;
@@ -114,7 +144,7 @@ text-decoration: none;
     transition: var(--transition);
     position: relative;
     padding-left: 10px;
-
+    white-space: nowrap;
 }
 .master-link::after{
     content: "";
@@ -146,12 +176,16 @@ padding-left: 20px;
 .master-link:hover + .arrowDown{
 color: var(--mainColor);
 }
+
+
 .subContainer{
     background-color: var(--silverBink);
     transition: var(--transition);
     height: 0;
-    overflow: hidden;
+   overflow: hidden;
 }
+
+
 .sub-link{
     display: block;
     width: 100%;
@@ -161,7 +195,8 @@ color: var(--mainColor);
     text-transform: capitalize;
     font-size: 1.2rem;
     color: var(--secColot);
-    transition: var(--transition);  
+    transition: var(--transition); 
+    white-space: nowrap; 
 }
 .sub-link::before{
     font-family: "Font Awesome 5 Brands"; 
@@ -192,9 +227,9 @@ color: var(--mainColor);
 
 .homeLogo{
     position: fixed;
-    bottom: 2rem;
+    bottom: 8rem;
     z-index: 500;
-    left: 23rem;
+    right: 0.2rem;
     font-size: 2rem;
     background: #34252F;
     width: 5rem;
@@ -204,10 +239,11 @@ color: var(--mainColor);
     display: grid;
     place-items: center;
     transition: all 0.5s linear;
+    transform: translateX(4rem);
 }
 
 .homeLogo:hover{
-    opacity: 0.8;
+    transform: translateX(0);
 }
 
 .tooltips{
