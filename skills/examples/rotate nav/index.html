@@ -48,7 +48,31 @@
    <div class="coding code-html">
     <pre>
 <code class="language-html">
-
+  &lt;div class="container1">
+  &lt;div class="template">
+    &lt;h2>Amazing Article&lt;/h2>
+    &lt;small>eman mohammed&lt;/small>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et sequi libero, error ab sapiente quia numquam quasi aperiam modi repellat laudantium maxime distinctio reiciendis minus inventore nihil hic debitis vel ratione tenetur quaerat fugit placeat. Exercitationem quaerat iusto corrupti perferendis, error nesciunt doloribus laborum autem maxime inventore dolorem culpa! Iste numquam reiciendis repellat corporis exercitationem temporibus, optio in quam sit placeat voluptatum, cum consequatur. Sunt numquam, quisquam minus necessitatibus natus excepturi velit est, ducimus nam, harum labore doloremque mollitia illo sapiente nesciunt corrupti! Aliquid repellendus esse nostrum quia qui, iste ipsa corrupti harum, omnis facere doloremque, sequi alias. Quos maiores cupiditate dolorem adipisci inventore voluptas, quae nesciunt eligendi illo deserunt eum aperiam officiis doloremque alias amet ipsam mollitia quo! Delectus sit ipsa debitis numquam, maxime, eius fuga, repudiandae fugiat cum consectetur earum iure nisi cupiditate quae itaque reprehenderit magni eveniet. Odio voluptatibus architecto enim labore dicta ab beatae quas quam.&lt;/p>
+  
+    &lt;h3>My family&lt;/h3>
+    &lt;img src="https://source.unsplash.com/random/1600x900" alt="">
+    &lt;p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores doloremque iusto beatae autem hic sit magni voluptatibus, necessitatibus sed facere reprehenderit accusamus molestias, atque provident aliquam blanditiis ratione adipisci nihil.&lt;/p>
+    &lt;div class="button-container">
+      &lt;div class="circle">
+      &lt;button class="btn bar" id="open">&lt;i class="fa fa-bars">&lt;/i>&lt;/button>
+      &lt;button class="btn close" id="close">&lt;i class="fa fa-times">&lt;/i>
+      &lt;/button>
+    &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;nav>
+    &lt;ul>
+      &lt;li>&lt;i class="fas fa-home">&lt;/i> Home&lt;/li>
+      &lt;li>&lt;i class="fas fa-user-alt">&lt;/i> About&lt;/li>
+      &lt;li>&lt;i class="fas fa-envelope">&lt;/i> Contact&lt;/li>
+    &lt;/ul>
+  &lt;/nav>
+  &lt;/div>
 </code>
 </pre>
   </div>
@@ -58,7 +82,141 @@
 <div class="coding code-css">
 <pre>
 <code class="language-css">
-   
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    background: #333;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 2;
+  }
+  
+  .template{
+    background: #fff;
+    padding: 8rem;
+    position: relative;
+    transform-origin: top left;
+    transition: all 0.5s linear;
+  }
+  
+  .showNav{
+  transform: rotate(-20deg);
+  }
+  .template h2
+  {
+    text-transform: capitalize;
+    margin-bottom: -15px;
+  }
+  .template small{
+    display: inline-block;
+    margin-top: 0;
+    text-transform: capitalize;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .template p{
+    text-align: justify;
+    font-size: 0.8rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+  
+  .template h3{
+    margin-bottom: 1.25rem;
+  }
+  
+  img{
+    display: block;
+    width: 100%;
+  }
+  
+  /* circle button */
+  .button-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(233, 103, 103);
+    border-radius: 50%;
+   transform: translate(-50%,-50%);
+  }
+  .circle{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transition: all 0.5s linear;
+  }
+  .btn{
+    border: 0;
+    outline: 0;
+    color: #fff;
+    background: transparent;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    font-size: 2rem;
+    transform-origin: top left;
+    cursor: pointer;
+    transition: all 0.5s linear;
+  }
+  
+  .btn.bar{
+    left: 65%;
+  }
+  .btn.close{
+    top: 60%;
+    left: 35%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+  }
+  
+   .template.showNav  .circle{
+  transform: rotate(-90deg);
+  }
+  /* end of circle button */
+  
+  /* the nav style */
+  nav{
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+  }
+  nav ul{
+    list-style: none;
+  }
+  
+  nav ul li {
+    font-size: 1.6rem;
+    margin-bottom: 1.25rem;
+    transform: translateX(-22rem);
+    transition: all 0.5s linear;
+    cursor: pointer;
+  }
+  
+  nav ul li:hover{
+    color: rgb(233, 103, 103);
+  }
+  
+  .template.showNav  + nav ul li{
+    transform: translateX(0);
+    transition-delay: 0.5s;
+  }
+  
+  nav ul li:nth-of-type(1){margin-left: 2rem;}
+  nav ul li:nth-of-type(2){margin-left: 6rem;}
+  nav ul li:nth-of-type(3){margin-left: 10rem;}
+  
+  nav ul li i{
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+  }
+  
+     
 </code>
 </pre>
   </div>
@@ -67,7 +225,17 @@
 <div class="coding code-js">
 <pre>
 <code class="language-js">
-
+  // variables
+  const template = document.querySelector(".template");
+  const openBtn = document.getElementById("open");
+  const closeBtn = document.getElementById("close");
+  
+  openBtn.addEventListener("click", function () {
+    template.classList.add("showNav");
+  });
+  closeBtn.addEventListener("click", function () {
+    template.classList.remove("showNav");
+  });
   </code>
   </pre>
 </div>
