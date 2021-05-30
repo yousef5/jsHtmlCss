@@ -33,7 +33,16 @@
    <div class="coding code-html">
     <pre>
 <code class="language-html">
-
+  &lt;div class="container1">
+  &lt;div class="all">
+  &lt;h3>please enter your names sperate it with (,)&lt;/h3>
+  &lt;h4>after you fininh press enter&lt;/h4>
+  &lt;textarea name="" id="txt" cols="100" rows="10" placeholder="please enter your txt pls">&lt;/textarea>
+  &lt;div class="tags">
+  
+  &lt;/div>
+  &lt;/div>
+  &lt;/div>
 </code>
 </pre>
   </div>
@@ -43,7 +52,82 @@
 <div class="coding code-css">
 <pre>
 <code class="language-css">
-   
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    line-height: 2;
+  }
+  .container1{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: rgb(213, 180, 250);
+  }
+  
+  .all h3{
+    text-align: center;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    color: brown;
+  }
+  
+  .all h4{
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 1.25rem;
+    color: crimson;
+  }
+  #txt{
+    border: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: darkred;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 2px 3px 2px rgba(0,0,0,0.4);
+  }
+  
+  #txt::placeholder{
+    text-transform: capitalize;
+  }
+  
+  .tags{
+    margin-top: 1rem;
+    max-width: 1170px;
+    min-height: 300px;
+  }
+  .all .tags .tagg{
+    display: inline-block;
+    background: coral;
+    padding: 0.5rem 1.6rem;
+    border-radius: 15px;
+    margin-left: 0.1rem;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+  
+  .all .tags span.highlight{
+    background: #333;
+    color: #fff;
+  }
+  
+  @media screen and (max-width: 900px){
+    #txt{
+      max-width: 700px;
+      margin-right:auto ;
+      margin-left: auto;
+      display: inline-block;
+    }
+  }
+    
 </code>
 </pre>
   </div>
@@ -52,7 +136,72 @@
 <div class="coding code-js">
 <pre>
 <code class="language-js">
-
+  // variables
+  const tagsContainer = document.querySelector(".tags");
+  const inputTxt = document.getElementById("txt");
+  
+  inputTxt.addEventListener("keyup", function (e) {
+    
+    createTag(e.target.value);
+  
+    if (e.key === "Enter") {
+      inputTxt.value = "";
+      selectionPicker();
+    }
+  
+  });
+  //////////////////////////////////////////////////////////////
+  
+  function createTag(input) {
+    const alltags = input
+      .split(",")
+      .filter((tag) => tag.trim() !== "")
+      .map((tag) => tag.trim());
+  
+    tagsContainer.innerHTML = "";
+  
+    alltags.forEach((tag) => {
+      const tagSpan = document.createElement("span");
+      tagSpan.classList.add("tagg");
+      tagSpan.textContent = tag;
+      tagsContainer.appendChild(tagSpan);
+    });
+  }
+  //////////////////////////////////////////////////////////////
+  function selectionPicker() {
+    const times = 30;
+    const interval = setInterval(() => {
+      const randomtag = pickRandomTag();
+      console.log(randomtag);
+      highlight(randomtag);
+  
+      setTimeout(() => {
+        unHighlight(randomtag);
+      }, 200);
+    }, 200);
+  
+    setTimeout(() => {
+      clearInterval(interval)
+      setTimeout(() => {
+        const randomtag = pickRandomTag();
+        highlight(randomtag)
+      }, 200);
+  
+    }, times * 200);
+  }
+  //////////////////////////////////////////////////////////////
+  function highlight(tag) {
+    tag.classList.add("highlight");
+  }
+  function unHighlight(tag) {
+    tag.classList.remove("highlight");
+  }
+  
+  const pickRandomTag = function () {
+    const allTags = document.querySelectorAll(".tagg");
+    return allTags[Math.floor(Math.random() * allTags.length)];
+  };
+  
   </code>
   </pre>
 </div>

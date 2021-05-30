@@ -9,6 +9,7 @@ const tools = document.getElementById('tool')
 const sideBar = document.getElementById('sideBar')
 
 // show side
+sideBar.classList.add('hideWidth')
 showSideBtn.addEventListener('click',function(){
   sideBar.classList.toggle('hideWidth')
 })
