@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>lorem</title>
+</head>
+<body>
+
+<div class="container1">
+
+<nav>
+  <ul>
+    <li><a href="">home</a></li>
+    <li><a href="">projects</a></li>
+    <li><a href="">contact</a></li>
+    <li><a href="">about</a></li>
+  </ul>
+  <button id="toggle">
+    <div class="line1"></div>
+    <div class="line2"></div>
+  </button>
+</nav>
+
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-html">
+<pre>
+<code class="language-html">
+  &lt;div class="container1">
+
+  &lt;nav>
+    &lt;ul>
+      &lt;li>&lt;a href="">home&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="">projects&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="">contact&lt;/a>&lt;/li>
+      &lt;li>&lt;a href="">about&lt;/a>&lt;/li>
+    &lt;/ul>
+    &lt;button id="toggle">
+      &lt;div class="line1">&lt;/div>
+      &lt;div class="line2">&lt;/div>
+    &lt;/button>
+  &lt;/nav>
+  
+  &lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  a{
+    text-decoration: none;
+  }
+  .container1{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+    to bottom,
+    rgb(228, 185, 130) 0%,
+    rgb(206, 187, 20) 25%,
+    rgb(228, 185, 130) 50%,
+    rgb(172, 201, 125) 75%,
+    rgb(228, 185, 130) 100%
+    );
+    display: grid;
+    place-items: center;
+  }
+  
+  nav{
+    display: flex;
+    padding:  1rem;
+    width: 80px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 5px 3px rgba(0,0,0,0.3);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s ease-in-out;
+    overflow-x: hidden;
+  }
+  nav ul{
+    width: 100%;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    transition: all 0.8s ease-in-out;
+  }
+  nav ul li{
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: all 0.8s ease-in-out;
+  }
+  
+  
+  nav ul li a{
+    text-align: center;
+    text-transform: capitalize;
+    font-family: fantasy;
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+    margin-left: 20px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button{
+    border: 0;
+    outline: 0;
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    transition: all 2s linear;
+  }
+  
+  button .line1{
+    width: 30px;
+    height: 3px;
+    background: rgb(92, 131, 238);
+    position: absolute;
+    top: 10px;
+    transition: all 0.8s linear;
+  }
+  button .line2{
+    width: 30px;
+    height: 3px;
+    background: rgb(92, 131, 238);
+    position: absolute;
+    bottom: 10px;
+    transition: all 0.8s linear;
+  }
+  nav ul li a:hover{
+    color: crimson;
+  }
+  
+  /* add active */
+  nav.active{
+    width: 400px;
+  }
+  
+  nav.active ul{
+    width: 100%;
+  }
+  
+  nav.active ul li{
+    opacity: 1;
+    transform: rotateY(360deg);
+  }
+  
+  nav.active button .line1{
+  transform:rotate(-765deg) translateY(5.5px);
+  }
+  nav.active button .line2{
+  transform:rotate(765deg) translateY(-5.5px);
+  }   
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+  // variables
+  const toggle = document.getElementById("toggle");
+  const nav = document.querySelector('nav')
+  
+  toggle.addEventListener('click',function(e){
+      nav.classList.toggle('active')
+  })
+  
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>
