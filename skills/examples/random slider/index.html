@@ -13,7 +13,11 @@
 <body>
 
 <div class="container1">
-
+<h1>count slider</h1>
+<div class="slider-contianer">
+  <input type="range" class="slider" min="0" max="100" value="0">
+  <label for="" class="label">0</label>
+</div>
 
 </div>
 
@@ -27,7 +31,14 @@
    <div class="coding code-html">
     <pre>
 <code class="language-html">
-
+  &lt;div class="container1">
+  &lt;h1>count slider&lt;/h1>
+  &lt;div class="slider-contianer">
+    &lt;input type="range" class="slider" min="0" max="100" value="0">
+    &lt;label for="" class="label">50&lt;/label>
+  &lt;/div>
+  
+  &lt;/div>
 </code>
 </pre>
   </div>
@@ -37,7 +48,81 @@
 <div class="coding code-css">
 <pre>
 <code class="language-css">
-   
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .container1{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  position: relative;
+  }
+  
+  .container1 h1{
+    position: absolute;
+    top: 20px;
+    text-transform: capitalize;
+    color: #fff;
+    text-shadow: 2px 3px 4px rgba(0,0,0,0.5);
+  }
+  .slider-contianer{
+    position: relative;
+  }
+  
+  input[type="range"]{
+    width: 300px;
+    margin: 18px 0;
+    -webkit-appearance: none;
+  }
+  input[type="range"]:focus{
+  outline: none;
+  }
+  
+  input[type="range"]::-webkit-slider-runnable-track{
+    background: rgba(131,58,180,1);
+    box-shadow: 2px 5px 3px rgba(0,0,0,0.5);
+    height: 10px;
+    cursor: pointer;
+  }
+  
+  input[type='range']::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: -4px;
+  }
+  
+  input[type='range'] + label{
+    position: absolute;
+    left: -15px;
+    top: -30px;
+   padding: 0.3rem 1.5rem;
+    background: #fff;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+    
 </code>
 </pre>
   </div>
@@ -46,7 +131,30 @@
 <div class="coding code-js">
 <pre>
 <code class="language-js">
+  // variables
 
+  const slider = document.querySelector(".slider");
+  const label = document.querySelector(".label");
+  
+  slider.addEventListener("input", function (e) {
+    const value = e.target.value;
+    const sliderWidth = getComputedStyle(e.target).getPropertyValue("width");
+    const labelWidth = getComputedStyle(label).getPropertyValue("width");
+    const labelWidthNumber = +labelWidth.substring(0, labelWidth.length - 2);
+    const sliderWidthNumber = +sliderWidth.substring(0, sliderWidth.length - 2);
+    const min = +e.target.min;
+    const max = +e.target.max;
+    const left = value * (sliderWidthNumber / max) - (labelWidthNumber / 2) + scale(value, min, max, 10, -10);
+    console.log(left);
+    console.log(sliderWidthNumber);
+    label.style.left = `${left}px`;
+    label.innerHTML = value;
+  });
+  
+  // https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers
+  const scale = (num, in_min, in_max, out_min, out_max) => {
+      return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    }
   </code>
   </pre>
 </div>
