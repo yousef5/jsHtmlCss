@@ -48,8 +48,9 @@ body{
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-position:center center;
-  background-size: cover;
+  /* background-position:center center; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
   top: -15vh;
   left: -15vw;
   transition: all 0.5s linear;
@@ -78,10 +79,10 @@ body{
 }
 
 .arrow-left{
-  left: calc(15vh - 85px);
+  left: calc(15vw - 70px);
 }
 .arrow-right{
-  right: calc(15vh - 85px);
+  right: calc(15vw - 70px);
 }
 
 
