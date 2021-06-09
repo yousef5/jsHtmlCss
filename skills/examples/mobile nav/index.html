@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>Nav Mobile</title>
+</head>
+<body>
+
+<div class="container1">
+<div class="mobile">
+<img src="https://images.pexels.com/photos/3184455/pexels-photo-3184455.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="content" class="content show-content">
+<img src="https://images.pexels.com/photos/3178818/pexels-photo-3178818.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="content" class="content ">
+<img src="https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="content" class="content ">
+<img src="https://images.pexels.com/photos/699459/pexels-photo-699459.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="content" class="content ">
+<ul>
+  <li class="show-btn">
+    <span><i class="fa fa-home"></i></span>
+    <p>home</p>
+  </li>
+  <li>
+    <span><i class="fa fa-wifi"></i></span>
+    <p>work</p>
+  </li>
+  <li>
+    <span><i class="fa fa-blog"></i></span>
+    <p>blog</p>
+  </li>
+  <li>
+    <span><i class="fab fa-telegram"></i></span>
+    <p>about us</p>
+  </li>
+</ul>
+</div>
+
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+  &lt;div class="container1">
+  &lt;div class="mobile">
+  &lt;img src="https://images.pexels.com/photos/3184455/pexels-photo-3184455.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="content" class="content show-content">
+  &lt;img src="https://images.pexels.com/photos/3178818/pexels-photo-3178818.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="content" class="content ">
+  &lt;img src="https://images.pexels.com/photos/3194519/pexels-photo-3194519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="content" class="content ">
+  &lt;img src="https://images.pexels.com/photos/699459/pexels-photo-699459.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="content" class="content ">
+  &lt;ul>
+    &lt;li class="show-btn">
+      &lt;span>&lt;i class="fa fa-home">&lt;/i>&lt;/span>
+      &lt;p>home&lt;/p>
+    &lt;/li>
+    &lt;li>
+      &lt;span>&lt;i class="fa fa-wifi">&lt;/i>&lt;/span>
+      &lt;p>work&lt;/p>
+    &lt;/li>
+    &lt;li>
+      &lt;span>&lt;i class="fa fa-blog">&lt;/i>&lt;/span>
+      &lt;p>blog&lt;/p>
+    &lt;/li>
+    &lt;li>
+      &lt;span>&lt;i class="fab fa-telegram">&lt;/i>&lt;/span>
+      &lt;p>about us&lt;/p>
+    &lt;/li>
+  &lt;/ul>
+  &lt;/div>
+  
+  &lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  img{
+    width: 100%;
+    display: block;
+  }
+  
+  .container1{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ad4dee;
+  }
+  
+  .mobile{
+   width: 350px;
+   height: 600px;
+   position: relative;
+   overflow: hidden;
+   border-radius: 20px;
+   background: #fff;
+   border: 2px solid #fff;
+  }
+  
+  .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 520px;
+    object-fit: cover;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .show-content{
+  opacity: 1;
+  }
+  
+  .mobile ul{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    justify-content: space-between;
+    list-style: none;
+  }
+  .mobile ul li{
+    cursor: pointer;
+    flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s linear;
+    height: 100%;
+    text-transform: capitalize;
+  }
+  
+  .mobile ul li:hover{
+    color: crimson;
+  }
+  
+  .show-btn{
+    color: crimson;
+  }   
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+  // variables
+  const btns = document.querySelectorAll("div ul li");
+  const pics = document.querySelectorAll(".content");
+  
+  btns.forEach((btn, idx) => {
+      console.log(btn);
+    btn.addEventListener("click", function (e) {
+      hidePics();
+      removeActiveBtn();
+      pics[idx].classList.add('show-content')
+      e.currentTarget.classList.add('show-btn')
+    });
+  });
+  
+  function hidePics() {
+    pics.forEach((pic) => pic.classList.remove("show-content"));
+  }
+  function removeActiveBtn() {
+    btns.forEach((btn) => btn.classList.remove("show-btn"));
+  }
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>
