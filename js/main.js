@@ -1,15 +1,16 @@
 const linkContainer = document.querySelectorAll(".linkContainer");
 const masterLink = document.querySelectorAll(".master-link");
 const frame = document.querySelector(".masterFrame");
-
 const subLinks = document.querySelectorAll(".sub-link");
 const showSideBtn = document.getElementById("showSide");
 const tools = document.getElementById("tool");
 const counts = document.querySelectorAll(".count");
 const sideBar = document.getElementById("sideBar");
-const countAll = document.querySelector(".countAll")
+const countAll = document.querySelector(".countAll");
+
+
 // show side
-sideBar.classList.add("hideWidth");
+// sideBar.classList.add("hideWidth");
 showSideBtn.addEventListener("click", function () {
   sideBar.classList.toggle("hideWidth");
 });
@@ -58,10 +59,11 @@ counts.forEach((count) => {
   console.log(count);
   const el = count.closest(".linkContainer");
   const el2 = el.querySelector(".subContainer");
-  const el2ChildrenCount = el2.children.length
-
-  count.innerHTML =el2ChildrenCount
+  const el2ChildrenCount = el2.children.length;
+  count.innerHTML = el2ChildrenCount;
 });
 
 //add countall
-countAll.innerHTML = subLinks.length
+countAll.innerHTML = subLinks.length;
+
+
