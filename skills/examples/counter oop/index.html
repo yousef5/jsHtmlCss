@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
     <title>counter oop</title>
 </head>
 <body>
+    
     <div class="container1">
         <!-- single counter -->
    <div class="container-counter counter1">
@@ -29,12 +33,217 @@
     <button class="btn increase">increase</button>
     </div>
    </div>
+</div>
 
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+    &lt;div class="container1">
+    &lt;!-- single counter -->
+&lt;div class="container-counter counter1">
+&lt;h3 class="counter-name">counter one&lt;/h3>
+&lt;span class="value">0&lt;/span>
+&lt;div class="button-container">
+&lt;button class="btn decrease">decrease&lt;/button>
+&lt;button class="btn reset">reset&lt;/button>
+&lt;button class="btn increase">increase&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;!-- single counter -->
+&lt;div class="container-counter counter2">
+&lt;h3 class="counter-name">counter two&lt;/h3>
+&lt;span class="value">0&lt;/span>
+&lt;div class="button-container">
+&lt;button class="btn decrease">decrease&lt;/button>
+&lt;button class="btn reset">reset&lt;/button>
+&lt;button class="btn increase">increase&lt;/button>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        line-height: 1.5;
+        font-size: 1rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background: #afafaf;
+    }
+    
+    .container1{
+        max-width: 1170px;
+        width: 80vw;
+        height: 100vh;
+        margin: 0 auto;
+        display: grid; 
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(auto-fill,minmax(500px,1fr));
+        gap: 20px;
+    }
+    
+    .container-counter{
+        background: #fff;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: 2px 5px 3px rgba(0, 0, 0, 0.5);
+    }
+    
+    .container-counter h3{
+        text-transform: capitalize;
+        font-size: 3rem;
+    }
+    
+    .container-counter span{
+        font-size: 8rem;
+        color: darkred;
+        font-weight: bold;
+    }
+    
+    .button-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        padding: 0.5rem 1.6rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 10px;
+        border: 2px solid #444;
+        text-transform: capitalize;
+        transition: all 0.5s linear;
+        background: #fff;
+    }
+    
+    .btn:hover{
+        background: #333;
+        color: #fff;
+    }
+    
+    
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+//fn constructor
+const counter = function (choose, value) {
+    this.choose = choose;
+    this.value = value;
+    this.valueEl = this.choose.querySelector(".value");
+    this.valueEl.textContent = this.value;
+  
+    //button
+    this.decreaseBtn = this.choose.querySelector(".decrease");
+    this.resetBtn = this.choose.querySelector(".reset");
+    this.increaseBtn = this.choose.querySelector(".increase");
+  
+    //
+    this.decreaseBtn.addEventListener("click", this.decrease.bind(this));
+    this.resetBtn.addEventListener('click',this.reset.bind(this))
+    this.increaseBtn.addEventListener('click',this.increase.bind(this))
+  };
+  
+  // prototype
+  counter.prototype.decrease = function () {
+    this.value--;
+    this.valueEl.textContent = this.value;
+  };
+  
+  counter.prototype.reset = function () {
+    this.value = 0;
+    this.valueEl.textContent = this.value;
+  };
+  counter.prototype.increase = function () {
+    this.value++;
+    this.valueEl.textContent = this.value;
+  };
+  
+  const counter1 = new counter(getElement("counter1"), 50);
+  const counter2 = new counter(getElement("counter2"), 100);
 
-
+  //ES6 classes
+  class counterCL {
+    constructor(choose, value) {
+      (this.choose = choose),
+        (this.value = value),
+        (this.valueEL = this.choose.querySelector(".value")),
+        (this.valueEL.textContent = this.value);
+      this.btnincrease = this.choose.querySelector(".increase");
+      this.btnincrease.addEventListener("click", this.increase.bind(this));
+      this.btnreset = this.choose.querySelector(".reset");
+      this.btnreset.addEventListener("click", this.reset.bind(this));
+      this.btndecrease = this.choose.querySelector(".decrease");
+      this.btndecrease.addEventListener("click", this.decrease.bind(this));
+    }
+  
+    increase() {
+      this.value++;
+      this.valueEL.textContent = this.value;
+    }
+    reset() {
+      this.value = 0;
+      this.valueEL.textContent = this.value;
+    }
+  
+    decrease() {
+      this.value--;
+      this.valueEL.textContent = this.value;
+    }
+  }
+  function getElement(el) {
+    const element = document.querySelector(`.${el}`);
+    if (element) {
+      return element;
+    } else {
+      throw new Error(`you choose this ${el} and its not exit`);
+    }
+  }
+  
+  const counter1 = new counterCL(getElement("counter1"), 100);
+  const counter = new counterCL(getElement("counter2"), 200);
+  
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
 </div>
 
 
-    <script src="main.js"></script>
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+
 </body>
 </html>
