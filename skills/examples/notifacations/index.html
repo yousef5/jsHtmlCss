@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>Notifications</title>
+</head>
+<body>
+
+<div class="container1">
+<button class="btn" id="btn">show notifications</button>
+<div class="toasts"></div>
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+
+  &lt;div class="container1">
+  &lt;button class="btn" id="btn">show notifications&lt;/button>
+  &lt;div class="toasts">&lt;/div>
+  &lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  body{
+    line-height: 1.5;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+  }
+  
+  .container1{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: #621eaf;
+    display: grid;
+    place-items: center;
+  }
+  
+  .toasts{
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+  }
+  
+  .btn{
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.5s linear;
+  }
+  
+  .btn:hover{
+    transform: scale(1.1);
+  }
+  
+  .messageBlue{
+    background: #19f3f3;
+    color: #333;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 2px 3px 2px rgba(0, 0, 0,0.2);
+    margin-bottom: 0.5rem;
+    min-width: 250px;
+  }
+  
+  .messageRed{
+    background: #d10431;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 2px 3px 2px rgba(0, 0, 0,0.2);
+    margin-bottom: 0.5rem;
+    min-width: 250px;
+  }
+  
+  .messageGreen{
+    background: rgb(0, 158, 71);
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 2px 3px 2px rgba(0, 0, 0,0.2);
+    margin-bottom: 0.5rem;
+    min-width: 250px;
+  }
+  
+    
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+  // variables
+  const btn = document.getElementById("btn");
+  const toasts = document.querySelector(".toasts");
+  const message = ["message1", "message2", "message3", "message4", "message5"];
+  const classStyle = ["messageBlue", "messageRed", "messageGreen"];
+  btn.addEventListener("click", function () {
+    const el = document.createElement("div");
+    el.classList.add(classStyle[getRandomStyle()]);
+    el.textContent = message[getRandomMessage()];
+    toasts.appendChild(el);
+  
+    setTimeout(() => {
+     el.remove()   
+    }, 3000);
+  });
+  
+  function getRandomMessage() {
+    return Math.floor(Math.random() * message.length);
+  }
+  
+  function getRandomStyle() {
+    return Math.floor(Math.random() * classStyle.length);
+  }
+  
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body{
+  line-height: 1.5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+
+.container1{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: #621eaf;
+  display: grid;
+  place-items: center;
+}
+
+.toasts{
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+}
+
+.btn{
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.btn:hover{
+  transform: scale(1.1);
+}
+
+.messageBlue{
+  background: #19f3f3;
+  color: #333;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 2px 3px 2px rgba(0, 0, 0,0.2);
+  margin-bottom: 0.5rem;
+  min-width: 250px;
+}
+
+.messageRed{
+  background: #d10431;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 2px 3px 2px rgba(0, 0, 0,0.2);
+  margin-bottom: 0.5rem;
+  min-width: 250px;
+}
+
+.messageGreen{
+  background: rgb(0, 158, 71);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 2px 3px 2px rgba(0, 0, 0,0.2);
+  margin-bottom: 0.5rem;
+  min-width: 250px;
+}
+
