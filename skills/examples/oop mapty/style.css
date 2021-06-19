@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.container1{
+
+}
+
+img{
+  display: block;
+  width: 100%;
+}
+/* data section */
+.data{
+  position: absolute;
+  width: 500px;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  direction: rtl;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  background: #232326;
+  z-index: 500;
+  overflow-y: auto;
+  transition: all 0.5s linear;
+}
+
+.data::-webkit-scrollbar {
+  width: 0;
+}
+
+.data-hidden{
+  transform: translateX(100%);
+}
+
+
+.showBtn{
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  background: transparent;
+  border: none;
+  font-size: 3rem;
+  color: #C3423F;
+  cursor: pointer;
+  transition: all 0.5s linear;
+  z-index: 500;
+}
+.showBtn:hover{
+  transform: scale(1.1);
+}
+.logo{
+  width: 300px;
+  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
+}
+
+.form{
+  background: #565756;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 25px;
+  display: grid;
+ box-shadow: 2px 5px 3px rgba(255, 255, 255, 0.2);
+}
+
+.form-hidden{
+  display: none;
+}
+
+.form__btn {
+  display: none;
+}
+label{
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+input,
+select{
+padding: 0.5rem;
+font-size: 1.2rem;
+border-radius: 10px;
+border: none;
+outline: none;
+}
+
+/* end of Data section */
+
+/* customer section */
+.customers{
+  padding-top: 1rem;
+}
+
+.customers ul{
+  list-style: none;
+}
+
+.customers ul li{
+  background:#595153;
+  padding: 0.5rem;
+  border-radius: 3px;
+  color: rgb(214, 213, 213);
+  display: grid;
+  grid-template-columns: 75px 1fr 75px 1fr;
+  gap: 5px 5px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5s linear;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+
+.customers ul li:hover{
+  background:#464244;
+}
+
+
+.customers ul li::before{
+  content: "";
+  width: 5px;
+  height: 100%;
+  background: #C3423F;
+  position: absolute;
+}
+
+.customers .label{
+  background: #FFC857;
+  color: #333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* end of customer secton */
+
+/* map */
+.map{
+  background: #565756;
+  width: 100%;
+  height: 100vh;
+}
+/* end of map */
