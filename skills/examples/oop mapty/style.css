@@ -56,6 +56,7 @@ img{
   transition: all 0.5s linear;
   z-index: 500;
 }
+
 .showBtn:hover{
   transform: scale(1.1);
 }
@@ -72,8 +73,24 @@ img{
   border-radius: 25px;
   display: grid;
  box-shadow: 2px 5px 3px rgba(255, 255, 255, 0.2);
+ position: relative;
 }
 
+.closeForm{
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.closeForm:hover{
+  transform: rotate(180deg);
+}
 .form-hidden{
   display: none;
 }
@@ -152,5 +169,21 @@ outline: none;
   background: #565756;
   width: 100%;
   height: 100vh;
+}
+
+
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: #333;
+  color: #fff;
+  direction: rtl;
+  border-radius: 5px;
+  padding-right: 0.2rem;
+  text-align: right;
+  font-size: 0.8rem;
+  border-right: 5px solid #C3423F;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: #333;
 }
 /* end of map */
