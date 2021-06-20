@@ -113,6 +113,12 @@ border: none;
 outline: none;
 }
 
+input:focus,
+select:focus{
+  background: #C3423F;
+  color: #fff;
+}
+
 /* end of Data section */
 
 /* customer section */

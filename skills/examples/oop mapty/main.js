@@ -189,7 +189,7 @@ class App {
   const WantedEl = this.#agents.find((agent)=> agent.id === elID)
   console.log(WantedEl);
 
-  this.#map.setView(WantedEl.coords, 20, {
+  this.#map.setView(WantedEl.coords,15, {
     animate: true,
     pan: {
       duration: 1,
