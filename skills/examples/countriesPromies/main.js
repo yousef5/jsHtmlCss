@@ -14,35 +14,37 @@ class App {
   }
 
   _loadList() {
-    const request = new XMLHttpRequest();
-    request.open("GET", "https://restcountries.eu/rest/v2/all");
-    request.send();
-    request.addEventListener("load", function () {
-      const listData = JSON.parse(this.responseText);
-      const listValue = listData
-        .map((value) => {
-          return `<option value="${value.name}"> ${value.name}</option>`;
-        })
-        .join(" ");
-      selectCountries.insertAdjacentHTML("beforeend", listValue);
-    });
+    fetch(`https://restcountries.eu/rest/v2/all`)
+      .then((response) => response.json())
+      .then((data) => {
+        const dataList = data
+          .map((d) => `<option value="${d.name}"> ${d.name}</option>`)
+          .join(" ");
+        selectCountries.insertAdjacentHTML("beforeend", dataList);
+      });
   }
 
-  _newWorkout() {
-    const country = selectCountries.value;
+  _newWorkout(c) {
+    const country = selectCountries.value || c;
     masterCard.innerHTML = "";
     neighbours.innerHTML = "";
-    this._renderCountryCard(country);
+    fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+      .then((response) => response.json())
+      .then((data) => {
+        this._renderCountryCard(data);
+        const neigbours = data[0].borders;
+        const listneigbours = neigbours.map((n) => `${n};`).join("");
+        return fetch(
+          `https://restcountries.eu/rest/v2/alpha?codes=${listneigbours}`
+        );
+      })
+      .then((response) => response.json())
+      .then((data) => this._renderNieghbour(data));
   }
 
-  _renderCountryCard(country) {
-    const request = new XMLHttpRequest();
-    request.open("GET", `https://restcountries.eu/rest/v2/name/${country}`);
-    request.send();
-
-    request.addEventListener("load", function () {
-      const [data] = JSON.parse(this.responseText);
-      const html = `
+  _renderCountryCard(datas) {
+    const [data] = datas;
+    const html = `
     <div class="card">
     <img src="${data.flag}" class="imgCard">
     <div class="card-info">
@@ -76,23 +78,13 @@ class App {
     </div>
   </div>
         `;
-      masterCard.innerHTML = html;
+    masterCard.innerHTML = html;
+  }
 
-      const neigbours = data.borders;
-      const listneigbours = neigbours.map((n) => `${n};`).join("");
-      console.log(listneigbours);
-      const request2 = new XMLHttpRequest();
-      request2.open(
-        "GET",
-        `https://restcountries.eu/rest/v2/alpha?codes=${listneigbours}`
-      );
-      request2.send();
-      request2.addEventListener("load", function () {
-        const data2 = JSON.parse(this.responseText);
-        console.log(data2);
-        const neighbourHtml = data2
-          .map(
-            (xx) => `
+  _renderNieghbour(data) {
+    const neighbourHtml = data
+      .map(
+        (xx) => `
         <div class="neighboutCard">
         <img src="${xx.flag}" alt="" class="neighbourimg">
         <h3 class="neighbourtitle">
@@ -100,12 +92,10 @@ class App {
         </h3>
       </div>
         `
-          )
-          .join(" ");
+      )
+      .join(" ");
 
-        neighbours.innerHTML = neighbourHtml;
-      });
-    });
+    neighbours.innerHTML = neighbourHtml;
   }
 
   _selectByClick(e) {
@@ -114,7 +104,8 @@ class App {
     const titlEl = targetEl.querySelector(".neighbourtitle").textContent.trim();
     masterCard.innerHTML = "";
     neighbours.innerHTML = "";
-    this._renderCountryCard(titlEl);
+    selectCountries.value = null;
+    this._newWorkout(titlEl);
   }
 }
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../../../style/page.css">
     <link rel="stylesheet" href="../../../style/prism3.css">
-    <title>lorem</title>
+    <title>Xml request </title>
 </head>
 <body>
 
@@ -16,42 +16,12 @@
 <h1 class="title">countries with Joe</h1>
 <div class="search">
   <select id="selectCountry">
-  <option value="egypt">egypt</option>
+    <option value="" disabled selected>Select your option</option>
   </select>
 </div>
 
-<div class="masterCard" id="masterCard">
-  <!-- <div class="card">
-    <img src="https://restcountries.eu/data/afg.svg"class="imgCard">
-    <div class="card-info">
-      <span class="card-title1">Afghanistan</span>
-      <span class="card-title2">افغانستان</span>
-      <div class="info">
-      <span class="spanTitle"> 🏛️ </span>
-      <span class="span__value">Kabul</span>
-
-      <span class="spanTitle"> 🗺️ </span>
-      <span class="span__value">Asia</span>
-
-
-      <span class="spanTitle"> 👨‍👩‍👦‍👦</span>
-      <span class="span__value"> 5.6 m<sup>3</sup> </span>
-
-      <span class="spanTitle">⏲️</span>
-      <span class="span__value">UTC+04:30</span>
-
-
-      <span class="spanTitle">📞</span>
-      <span class="span__value"> 93</span>
-
-      <span class="spanTitle">💸</span>
-      <span class="span__value">Afghan afghani </span>
-
-    </div>
-
-    </div>
-  </div> -->
-</div>
+<div class="masterCard" id="masterCard"></div>
+<div class="neighbours"></div>
 
 </div>
 
@@ -65,7 +35,18 @@
    <div class="coding code-html">
     <pre>
 <code class="language-html">
-
+  &lt;div class="container1">
+  &lt;h1 class="title">countries with Joe&lt;/h1>
+  &lt;div class="search">
+    &lt;select id="selectCountry">
+      &lt;option value="" disabled selected>Select your option&lt;/option>
+    &lt;/select>
+  &lt;/div>
+  
+  &lt;div class="masterCard" id="masterCard">&lt;/div>
+  &lt;div class="neighbours">&lt;/div>
+  
+  &lt;/div>
 </code>
 </pre>
   </div>
@@ -75,6 +56,157 @@
 <div class="coding code-css">
 <pre>
 <code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  img{
+    width: 100%;
+    display: block;
+  }
+  
+  body{
+    overflow-x: hidden;
+  }
+  .container1{
+    width: 100vw;
+    background: linear-gradient(90deg, rgba(251,154,63,1) 0%, rgba(171,64,170,1) 100%);
+    min-height: 100vh;
+   
+  }
+  
+  .title{
+    text-align: center;
+    padding-top: 2rem;
+    text-transform: capitalize;
+    font-size: 3rem;
+    color: #fffbfb;
+  }
+  
+  .search{
+    width: 500px;
+    margin: 1rem auto;
+    /* transform: translateX(50%); */
+  }
+  
+  .search select{
+    width: 100%;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    text-transform: capitalize;
+  }
+  
+  .search select:focus{
+    outline: none;
+  }
+  
+  
+  .masterCard{
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  
+  .card{
+    position: relative;
+    width: 350px;
+    overflow: hidden;
+    border: 2px solid #68534D;
+    border-radius: 25px;
+    display: flex;
+    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s linear;
+    flex-direction: column;
+  }
+  
+  .imgCard{
+    /* width: 40%;
+    flex: 0  0 40%; */
+    object-fit: cover;
+  }
+  
+  .card-info{
+    /* width: 60%;
+    flex: 0  0 60%; */
+    background: #ced1a0;
+  }
+  
+  .card-info .card-title1{
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    background: #68534D;
+    padding: 0.5rem;
+    padding-bottom: 0.1rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 0.1rem;
+    color: #ebebeb;
+  }
+  
+  .card-info .card-title2{
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    background: #d1b9b3;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.1rem;
+    color: #181d02;
+  }
+  
+  .info{
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr;
+    gap: 5px;
+    padding: 0.5rem;
+  }
+  
+  .spanTitle{
+    text-align: center;
+     font-size: 1.5rem;
+  }
+  
+  .span__value{
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(66, 2, 2);
+  }
+  
+  
+  .neighbours{
+    max-width: 1170px;
+    width: 80vw;
+    margin: 1rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,300px));
+    grid-auto-rows: 250px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 2rem;
+  }
+  
+  .neighboutCard img{
+    height: 200px;
+  }
+  .neighboutCard{
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr 40px;
+    place-items: center;
+    background: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.5s linear;
+  }
+  
+  .neighboutCard:hover{
+    transform: scale(1.02);
+  }
    
 </code>
 </pre>
@@ -84,7 +216,128 @@
 <div class="coding code-js">
 <pre>
 <code class="language-js">
-
+  // variables
+  const selectCountries = document.getElementById("selectCountry");
+  const masterCard = document.getElementById("masterCard");
+  const card = document.querySelector(".card");
+  const neighbours = document.querySelector(".neighbours");
+  let neigbour;
+  
+  class App {
+    constructor() {
+      this._loadList();
+      // events
+      selectCountries.addEventListener("change", this._newWorkout.bind(this));
+      neighbours.addEventListener("click", this._selectByClick.bind(this));
+    }
+  
+    _loadList() {
+      const request = new XMLHttpRequest();
+      request.open("GET", "https://restcountries.eu/rest/v2/all");
+      request.send();
+      request.addEventListener("load", function () {
+        const listData = JSON.parse(this.responseText);
+        const listValue = listData
+          .map((value) => {
+            return `<option value="${value.name}"> ${value.name}</option>`;
+          })
+          .join(" ");
+        selectCountries.insertAdjacentHTML("beforeend", listValue);
+      });
+    }
+  
+    _newWorkout() {
+      const country = selectCountries.value;
+      masterCard.innerHTML = "";
+      neighbours.innerHTML = "";
+      this._renderCountryCard(country);
+    }
+  
+    _renderCountryCard(country) {
+      const request = new XMLHttpRequest();
+      request.open("GET", `https://restcountries.eu/rest/v2/name/${country}`);
+      request.send();
+  
+      request.addEventListener("load", function () {
+        const [data] = JSON.parse(this.responseText);
+        const html = `
+      <div class="card">
+      <img src="${data.flag}" class="imgCard">
+      <div class="card-info">
+        <span class="card-title1">${data.name}</span>
+        <span class="card-title2">${data.nativeName}</span>
+        <div class="info">
+        <span class="spanTitle"> 🏛️ </span>
+        <span class="span__value">${data.capital}</span>
+  
+        <span class="spanTitle"> 🗺️ </span>
+        <span class="span__value">${data.region}</span>
+  
+  
+        <span class="spanTitle"> 👨‍👩‍👦‍👦</span>
+        <span class="span__value"> ${(data.population / 1000000).toFixed(
+          1
+        )} m</span>
+  
+        <span class="spanTitle">⏲️</span>
+        <span class="span__value">${data.timezones[0]}</span>
+  
+  
+        <span class="spanTitle">📞</span>
+        <span class="span__value">+${data.callingCodes[0]}</span>
+  
+        <span class="spanTitle">💸</span>
+        <span class="span__value">${data.currencies[0].code}</span>
+  
+      </div>
+  
+      </div>
+    </div>
+          `;
+        masterCard.innerHTML = html;
+  
+        const neigbours = data.borders;
+        const listneigbours = neigbours.map((n) => `${n};`).join("");
+        console.log(listneigbours);
+        const request2 = new XMLHttpRequest();
+        request2.open(
+          "GET",
+          `https://restcountries.eu/rest/v2/alpha?codes=${listneigbours}`
+        );
+        request2.send();
+        request2.addEventListener("load", function () {
+          const data2 = JSON.parse(this.responseText);
+          console.log(data2);
+          const neighbourHtml = data2
+            .map(
+              (xx) => `
+          <div class="neighboutCard">
+          <img src="${xx.flag}" alt="" class="neighbourimg">
+          <h3 class="neighbourtitle">
+            ${xx.name}
+          </h3>
+        </div>
+          `
+            )
+            .join(" ");
+  
+          neighbours.innerHTML = neighbourHtml;
+        });
+      });
+    }
+  
+    _selectByClick(e) {
+      console.log(e.target);
+      const targetEl = e.target.closest(".neighboutCard");
+      const titlEl = targetEl.querySelector(".neighbourtitle").textContent.trim();
+      masterCard.innerHTML = "";
+      neighbours.innerHTML = "";
+      this._renderCountryCard(titlEl);
+    }
+  }
+  
+  const app = new App();
+  
   </code>
   </pre>
 </div>
