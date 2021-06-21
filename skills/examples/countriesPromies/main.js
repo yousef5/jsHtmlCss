@@ -17,6 +17,7 @@ class App {
     fetch(`https://restcountries.eu/rest/v2/all`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         const dataList = data
           .map((d) => `<option value="${d.name}"> ${d.name}</option>`)
           .join(" ");
