@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style/page.css">
+    <link rel="stylesheet" href="../../../style/prism3.css">
+    <title>password strenth</title>
+</head>
+<body>
+
+<div class="container1">
+  <div class="background" id="background"></div>
+<div class="formContainer">
+  <h3 class="formTitle">image password strength</h3>
+  <p class="formInfo">Change the password to see the effect</p>
+  <label class="label">email :</label>
+  <input type="email" class="emailInput">
+  <label class="label">password :</label>
+  <input type="password" class="passwordInput" id="password">
+  <button class="btn">submit</button>
+</div>
+
+</div>
+
+
+
+<a href="#" class="showCode" id="showCode"><i class="fa fa-code"></i></a>
+<!-- the code  -->
+<div class="single-code" id="single-code">
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+   <div class="coding code-html">
+    <pre>
+<code class="language-html">
+  &lt;div class="container1">
+  &lt;div class="background" id="background">&lt;/div>
+&lt;div class="formContainer">
+  &lt;h3 class="formTitle">image password strength&lt;/h3>
+  &lt;p class="formInfo">Change the password to see the effect&lt;/p>
+  &lt;label class="label">email :&lt;/label>
+  &lt;input type="email" class="emailInput">
+  &lt;label class="label">password :&lt;/label>
+  &lt;input type="password" class="passwordInput" id="password">
+  &lt;button class="btn">submit&lt;/button>
+&lt;/div>
+
+&lt;/div>
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+   <!-- single code -->
+<div class="coding code-css">
+<pre>
+<code class="language-css">
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .container1{
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .background{
+  position: absolute;
+  background: url('https://images.pexels.com/photos/1714208/pexels-photo-1714208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')center/cover no-repeat;
+  filter: blur(20px);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  }
+  
+  .formContainer{
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  
+  label,
+  input{
+    display: block;
+  }
+  
+  .formTitle{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+    font-weight: 200;
+  }
+  
+  .formInfo{
+    text-align: center;
+    font-size: 0.8rem;
+    padding-top: 0.4rem;
+    color: #8d8c8c;
+    padding-bottom: 1rem;
+  }
+  
+  .label{
+    text-transform: capitalize;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: #4d4c4c;
+  }
+  
+  input{
+    width: 100%;
+    padding: 0.4rem;
+    border-radius: 3px;
+    margin-bottom: 0.5rem;
+    outline: none;
+    border: 1px solid #dfdfdf;
+  }
+  
+  .btn{
+    margin-top: 0.8rem;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    background: #222;
+    color: #fff;
+    text-transform: capitalize;
+  } 
+</code>
+</pre>
+  </div>
+  <!-- end of single code -->
+<!-- ------------------------------------------------------------- -->
+<div class="coding code-js">
+<pre>
+<code class="language-js">
+  const background = document.getElementById("background");
+  const password = document.getElementById("password");
+  
+  password.addEventListener("input", function (e) {
+    const pass = e.target.value;
+    const passLength = pass.length;
+    const blur = `blur(${(20 - passLength) * 2}px)`;
+    background.style.filter = blur;
+  });
+  
+  </code>
+  </pre>
+</div>
+ <!-- end of single code -->
+ <!-- ------------------------------------------------------------- -->
+</div>
+
+
+<script src="../../../js/prism3.js"></script>
+<script src="../../../js/code.js"></script>
+<script src="main.js"></script>
+    
+</body>
+</html>
